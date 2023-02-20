@@ -23,3 +23,7 @@ gitignore
 Thumbs.db
 
 .env
+
+
+package-lock.json
+bun.lockb
