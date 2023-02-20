@@ -1,0 +1,42 @@
+{
+  "name": "hra",
+  "scripts": {
+    "dev": "solid-start dev --port 3000",
+    "start": "solid-start start --port 3000",
+    "build": "solid-start build",
+    "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\"",
+    "push": "prisma db push",
+    "postinstall": "prisma generate"
+  },
+  "type": "module",
+  "devDependencies": {
+    "solid-start-node": "^0.2.21",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-solid": "^0.9.4",
+    "@types/node": "^18.14.0",
+    "solid-start-vercel": "^0.2.21",
+    "prisma": "^4.10.1",
+    "unocss": "^0.49.7"
+  },
+  "dependencies": {
+    "@solidjs/meta": "^0.28.2",
+    "@solidjs/router": "^0.7.0",
+    "solid-js": "^1.6.11",
+    "solid-start": "^0.2.21",
+    "undici": "5.20.0",
+    "zod": "^3.20.6",
+    "@prisma/client": "^4.10.1",
+    "solid-trpc": "^0.0.11-rc.2",
+    "@tanstack/solid-query": "^4.24.9",
+    "solid-start-trpc": "^0.0.16",
+    "@trpc/client": "^10.12.0",
+    "@trpc/server": "^10.12.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
