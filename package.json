@@ -10,17 +10,20 @@
   },
   "type": "module",
   "devDependencies": {
-    "solid-start-node": "^0.2.21",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.2",
+    "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
+    "@unocss/preset-attributify": "^0.49.7",
+    "@unocss/preset-icons": "^0.49.7",
+    "@unocss/preset-uno": "^0.49.7",
     "eslint": "^8.34.0",
     "eslint-plugin-solid": "^0.9.4",
-    "@types/node": "^18.14.0",
-    "solid-start-vercel": "^0.2.21",
     "prisma": "^4.10.1",
-    "unocss": "^0.49.7"
+    "solid-start-node": "^0.2.21",
+    "solid-start-vercel": "^0.2.21",
+    "typescript": "^4.9.5",
+    "unocss": "^0.49.7",
+    "vite": "^4.1.2"
   },
   "dependencies": {
     "@solidjs/meta": "^0.28.2",
