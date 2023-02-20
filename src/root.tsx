@@ -15,6 +15,7 @@ import {
 } from "solid-start";
 import { trpc, queryClient, client } from "~/utils/trpc";
 
+import "@unocss/reset/tailwind.css";
 import "uno.css";
 
 export default function Root() {
