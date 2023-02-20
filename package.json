@@ -1,45 +1,46 @@
 {
   "name": "hra",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "solid-start dev --port 3000",
-    "start": "solid-start start --port 3000",
-    "build": "solid-start build",
-    "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\"",
-    "push": "prisma db push",
-    "postinstall": "prisma generate"
-  },
-  "type": "module",
-  "devDependencies": {
-    "@types/node": "^18.14.0",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
-    "@unocss/preset-attributify": "^0.49.7",
-    "@unocss/preset-icons": "^0.49.7",
-    "@unocss/preset-uno": "^0.49.7",
-    "eslint": "^8.34.0",
-    "eslint-plugin-solid": "^0.9.4",
-    "prisma": "^4.10.1",
-    "solid-start-node": "^0.2.21",
-    "solid-start-vercel": "^0.2.21",
-    "typescript": "^4.9.5",
-    "unocss": "^0.49.7",
-    "vite": "^4.1.2"
+    "build": "next build",
+    "dev": "next dev",
+    "postinstall": "prisma generate",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
-    "@solidjs/meta": "^0.28.2",
-    "@solidjs/router": "^0.7.0",
-    "solid-js": "^1.6.11",
-    "solid-start": "^0.2.21",
-    "undici": "5.20.0",
-    "zod": "^3.20.6",
-    "@prisma/client": "^4.10.1",
-    "solid-trpc": "^0.0.11-rc.2",
-    "@tanstack/solid-query": "^4.24.9",
-    "solid-start-trpc": "^0.0.16",
-    "@trpc/client": "^10.12.0",
-    "@trpc/server": "^10.12.0"
+    "@prisma/client": "^4.9.0",
+    "@tanstack/react-query": "^4.20.2",
+    "@trpc/client": "^10.9.0",
+    "@trpc/next": "^10.9.0",
+    "@trpc/react-query": "^10.9.0",
+    "@trpc/server": "^10.9.0",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "superjson": "1.9.1",
+    "zod": "^3.20.2"
   },
-  "engines": {
-    "node": ">=16"
+  "devDependencies": {
+    "@types/eslint": "^8.21.1",
+    "@types/node": "^18.11.18",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.30.0",
+    "eslint-config-next": "13.1.6",
+    "postcss": "^8.4.14",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "prisma": "^4.9.0",
+    "tailwindcss": "^3.2.0",
+    "typescript": "^4.9.4"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.5.6"
   }
 }
