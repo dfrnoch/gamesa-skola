@@ -3,7 +3,7 @@ import { A } from "solid-start";
 import { trpc } from "../utils/trpc";
 
 const Home: VoidComponent = () => {
-	const hello = trpc.example.hello.useQuery(() => ({ name: "from tRPC" }));
+	const hello = trpc.example.hello.useQuery(() => ({ name: "test" }));
 	return (
 		<main class="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#026d56] to-[#152a2c]">
 			<div class="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
