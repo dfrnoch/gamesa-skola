@@ -56,11 +56,11 @@ model Game {
     health     Int      @default(3)
 
     inventory   Inventory?
-    currentSpot Spot?      @relation(fields: [spotId], references: [id])
+    currentSpot Spot       @relation(fields: [spotId], references: [id])
+    user        User       @relation(fields: [userId], references: [id])
 
-    user   User    @relation(fields: [userId], references: [id])
-    userId String  @unique
-    spotId String?
+    userId String @unique
+    spotId String
 }
 
 model VerificationToken {

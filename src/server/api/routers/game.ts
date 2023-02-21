@@ -8,6 +8,7 @@ export const gameRouter = createTRPCRouter({
       data: {
         userId: ctx.session.user.id,
         hasStarted: true,
+        spotId: "cleeroxbn0000tu6p8dmeo8jo", //Prvni spot
       },
     });
   }),
@@ -20,6 +21,9 @@ export const gameRouter = createTRPCRouter({
     return prisma.game.findFirst({
       where: {
         userId: ctx.session.user.id,
+      },
+      include: {
+        currentSpot: true,
       },
     });
   }),

@@ -20,6 +20,7 @@ function Fourth(): JSX.Element {
     });
   }
 
+  //TODO: tohle budeme validovat na serveru a ne na FE
   function handleClick(): void {
     if (message.first === "ahoj" && message.second === "baf") {
       setUpdate("ano");
@@ -29,7 +30,7 @@ function Fourth(): JSX.Element {
   }
 
   return (
-    <main className="w-screen h-screen bg-gray-700 text-gray-200">
+    <>
       <div className="flex justify-center">
         <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4" />
       </div>
@@ -64,7 +65,7 @@ function Fourth(): JSX.Element {
         </button>
         <h2 className="pl-4">sfa: {update}</h2>
       </div>
-    </main>
+    </>
   );
 }
 
