@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import StartGame from "~/components/Home/StartGame";
+import Video from "~/components/Video";
 
 import { api } from "~/utils/api";
 
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
   return (
     <>
       <main className="flex h-screen w-screen flex-col items-center bg-gray-700">
+        <Video url="https://joy.videvo.net/videvo_files/video/premium/video0006/large_watermarked/spinning_glass_head4k03_preview.mp4" />
         <div className="border-[5px] border-warm-gray-50 w-screen h-screen">Prihlasen</div>
       </main>
 
