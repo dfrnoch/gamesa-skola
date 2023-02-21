@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <>
       <main className="flex h-screen w-screen flex-col items-center bg-gray-700">
-        <div className="border-[5px] border-warm-gray-50 w-screen h-screen">ahoj</div>
+        <div className="border-[5px] border-warm-gray-50 w-screen h-screen"></div>
       </main>
 
       {/*
