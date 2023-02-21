@@ -55,10 +55,12 @@ model Game {
     startTime  DateTime @default(now())
     health     Int      @default(3)
 
-    inventory Inventory?
+    inventory   Inventory?
+    currentSpot Spot?      @relation(fields: [spotId], references: [id])
 
-    user   User   @relation(fields: [userId], references: [id])
-    userId String @unique
+    user   User    @relation(fields: [userId], references: [id])
+    userId String  @unique
+    spotId String?
 }
 
 model VerificationToken {
@@ -87,5 +89,11 @@ model Item {
     inventory Inventory[]
 }
 
+model Spot {
+    id String @id @default(cuid())
 
+    number Int
+    name   String
 
+    Game Game[]
+}
