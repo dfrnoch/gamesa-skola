@@ -29,7 +29,7 @@ export const gameRouter = createTRPCRouter({
       return null;
     }
 
-    return prisma.spot.findUnique({
+    return prisma.spot.findFirst({
       where: {
         id: input,
       },
