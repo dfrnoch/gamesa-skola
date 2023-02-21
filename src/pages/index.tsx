@@ -1,5 +1,4 @@
 import { type NextPage } from "next";
-import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import StartGame from "~/components/Home/StartGame";
@@ -7,16 +6,20 @@ import StartGame from "~/components/Home/StartGame";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  const { data: sessionData } = useSession();
+  const getGame = api.game.getGame.useQuery();
 
-  if (!sessionData) {
+  if (getGame.isLoading) {
+    return <div>Načítání</div>;
+  }
+
+  if (!getGame.data) {
     return <StartGame />;
   }
 
   return (
     <>
       <main className="flex h-screen w-screen flex-col items-center bg-gray-700">
-        <div className="border-[5px] border-warm-gray-50 w-screen h-screen"></div>
+        <div className="border-[5px] border-warm-gray-50 w-screen h-screen">Prihlasen</div>
       </main>
 
       {/*
