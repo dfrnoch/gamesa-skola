@@ -1,71 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 
-export default function Fourth() {
-  const [message, setMessage] = useState({
+interface Message {
+  first: string;
+  second: string;
+}
+
+function Fourth(): JSX.Element {
+  const [message, setMessage] = useState<Message>({
     first: "",
     second: "",
   });
-  const [update, setUpdate] = useState("");
+  const [update, setUpdate] = useState<string>("");
 
-  // rome-ignore lint/suspicious/noExplicitAny: <explanation>
-  function handleChange(event: { target: { value: any; name: any } }) {
-    const value = event.target.value;
-
+  function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+    const { name, value } = event.target;
     setMessage({
       ...message,
-      [event.target.name]: value,
+      [name]: value,
     });
   }
 
-  const handleClick = () => {
+  function handleClick(): void {
     if (message.first === "ahoj" && message.second === "baf") {
       setUpdate("ano");
     } else {
       setUpdate("ne");
     }
-  };
+  }
 
   return (
-    <>
-      <main className="w-screen h-screen  bg-gray-700 text-slate-200">
-        <div className="flex justify-center">
-          <img src="" alt="logo" className="pl-[1rem] w-[10rem] h-[10rem] border-light-200 border-[5px]" />
-        </div>
+    <main className="w-screen h-screen bg-gray-700 text-gray-200">
+      <div className="flex justify-center">
+        <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4" />
+      </div>
 
-        <div className="mt-[5rem]">
-          <p className="text-[25px] text-center p-[1rem]">
-            Tady bude
-            <input
-              type={"text"}
-              onChange={handleChange}
-              value={message.first}
-              name="first"
-              className="text-gray-700 rounded mr-[1rem] ml-[1rem]"
-            />{" "}
-            tady pokračuje.
-          </p>
-          <p className="text-[25px] text-center p-[1rem]">
-            Text
-            <input
-              type={"text"}
-              onChange={handleChange}
-              value={message.second}
-              name="second"
-              className="text-gray-700 rounded mr-[1rem] ml-[1rem]"
-            />
-            je zde.
-          </p>
-        </div>
-        <div className="flex justify-center pt-[4rem]">
-          <button
-            onClick={handleClick}
-            className="w-[8rem] h-[3rem] text-[1.5rem] bg-gray-200 text-gray-700 rounded"
-          >
-            Button
-          </button>
-          <h2>sfa: {update}</h2>
-        </div>
-      </main>
-    </>
+      <div className="mt-10">
+        <p className="text-3xl text-center p-4">
+          Tady bude{" "}
+          <input
+            type="text"
+            onChange={handleChange}
+            value={message.first}
+            name="first"
+            className="text-gray-700 rounded mr-4 ml-4"
+          />{" "}
+          tady pokračuje.
+        </p>
+        <p className="text-3xl text-center p-4">
+          Text{" "}
+          <input
+            type="text"
+            onChange={handleChange}
+            value={message.second}
+            name="second"
+            className="text-gray-700 rounded mr-4 ml-4"
+          />{" "}
+          je zde.
+        </p>
+      </div>
+      <div className="flex justify-center pt-16">
+        <button onClick={handleClick} className="w-32 h-12 text-lg bg-gray-200 text-gray-700 rounded">
+          Button
+        </button>
+        <h2 className="pl-4">sfa: {update}</h2>
+      </div>
+    </main>
   );
 }
+
+export default Fourth;
