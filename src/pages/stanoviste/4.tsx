@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-function check() {}
-
 export default function Fourth() {
-  const [message, setMessage] = React.useState({
+  const [message, setMessage] = useState({
     first: "",
     second: "",
   });

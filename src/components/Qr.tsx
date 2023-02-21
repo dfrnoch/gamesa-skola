@@ -21,7 +21,6 @@ export default function CodeReader() {
             facingMode: "environment",
           }}
         />
-        <p>{data}</p>
       </div>
     </div>
   );
