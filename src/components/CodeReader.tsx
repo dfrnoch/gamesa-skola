@@ -1,7 +1,19 @@
 import { QrReader } from "react-qr-reader";
+import { api } from "~/utils/api";
 
 export default function CodeReader() {
-  const checkResult = (result: string) => {
+  const validateSpot = api.spot.validateSpot.useMutation();
+
+  const checkResult = async (result: string) => {
+    await validateSpot.mutateAsync(result);
+
+    if (validateSpot.isSuccess) {
+      console.log("success");
+      //todo: invalidate getGame trpc query
+    } else {
+      console.log("error");
+    }
+
     console.log(result);
   };
 
