@@ -10,16 +10,27 @@ function check(){
 
 
 export default function Fourth() {
-    const [message, setMessage] = useState('');
-    const [update, setUpdate] = useState(message);
+
+
+    const [message, setMessage] = React.useState({
+        first:"",
+        second:""
+    });
+    const [update, setUpdate] = useState("");
     
-    const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) =>{
-        setMessage(event.target.value);
+    // rome-ignore lint/suspicious/noExplicitAny: <explanation>
+    function  handleChange(event: { target: { value: any; name: any; }; }) {
+        const value = event.target.value;
+
+        setMessage({
+            ...message,
+            [event.target.name]: value
+        })
     }
 
     const handleClick = () =>{
-        if(message === "ahoj"){
-            setUpdate("Ano");
+        if(message.first === "ahoj" && message.second === "baf"){
+            setUpdate("ano")
         }else{
             setUpdate("ne")
         }
@@ -37,11 +48,11 @@ export default function Fourth() {
         <div className="mt-[5rem]">
             <p className="text-[25px] text-center">
                 Tady bude 
-                 <input type={"text"} onChange={handleChange}/>
+                 <input type={"text"} onChange={handleChange} value={message.first} name="first"/>
                  tady pokračuje.</p>
             <p className="text-[25px] text-center">
                 Text 
-                 <input type={"text"} onChange={handleChange}/>
+                 <input type={"text"} onChange={handleChange} value={message.second} name="second"/>
                  je zde.</p>
         </div>
         <div className="flex justify-center">
