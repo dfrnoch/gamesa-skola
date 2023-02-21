@@ -1,0 +1,1564 @@
+{
+  "root": "C:/Users/tobis/gamesa-skola",
+  "modules": [
+    {
+      "id": "/@solid-refresh",
+      "deps": [],
+      "plugins": [
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "/__uno.css",
+      "deps": [],
+      "plugins": [
+        "unocss:global",
+        "vite:css",
+        "vite:css-post",
+        "unocss:global:post",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/.vite/deps/@trpc_client.js?v=2ac3ed7c",
+      "deps": [],
+      "plugins": [
+        "vite:optimized-deps",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/.vite/deps/chunk-EBLBW6JV.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "vite:optimized-deps",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/.vite/deps/chunk-R2OJAY3B.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "vite:optimized-deps",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/.vite/deps/solid-js.js?v=53da11be",
+      "deps": [],
+      "plugins": [
+        "vite:optimized-deps",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/.vite/deps/solid-js_store.js?v=53da11be",
+      "deps": [],
+      "plugins": [
+        "vite:optimized-deps",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/.vite/deps/solid-js_web.js?v=53da11be",
+      "deps": [],
+      "plugins": [
+        "vite:optimized-deps",
+        "vite:import-analysis"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/meta/dist/index.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/components.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/index.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/integration.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/lifecycle.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/routing.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/utils.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/focusManager.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/hydration.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/index.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/infiniteQueryBehavior.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/infiniteQueryObserver.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/logger.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/mutation.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/mutationCache.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/mutationObserver.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/notifyManager.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/onlineManager.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/queriesObserver.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/query.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/queryCache.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/queryClient.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/queryObserver.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/removable.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/retryer.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/subscribable.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/query-core/build/lib/utils.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/QueryClientProvider.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/createBaseQuery.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/createInfiniteQuery.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/createMutation.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/createQueries.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/createQuery.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/index.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/types.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/useIsFetching.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/useIsMutating.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@tanstack/solid-query/build/solid/utils.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@trpc/server/dist/index-972002da.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@trpc/server/dist/shared/index.mjs?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@unocss/reset/tailwind.css",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:css",
+        "vite:css-post",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/Form.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/FormError.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/createRouteAction.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/createRouteData.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/index.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/entry-client/mount.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/error-boundary/ErrorBoundary.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/error-boundary/index.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/index.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/clientOnly.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/index.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/router.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/server-router.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Document.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/InlineStyles.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid-start-file-system-router",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Links.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Meta.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Scripts.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/index.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/router.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/ServerContext.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/responses.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/types.tsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookie.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookieSigning.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookieStorage.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookies.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/index.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/memoryStorage.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/sessions.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/types.ts?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/createTRPCSolid.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/index.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/internals/context.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/internals/getArrayQueryKey.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/internals/getQueryKey.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/interop.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/shared/hooks/createHooksInternal.jsx?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/shared/index.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/shared/proxy/decorationProxy.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/shared/proxy/utilsProxy.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/shared/queryClient.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-trpc/dist/shared/types.js?v=2f17421b",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/vite/dist/client/client.mjs",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/vite/dist/client/env.mjs",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:client-inject",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/root.css",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:css",
+        "vite:css-post",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/routes/index.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid-start-file-system-router",
+        "solid",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/utils/trpc.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    }
+  ],
+  "ssrModules": [
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/meta/dist/index.jsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/components.jsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/index.jsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/integration.js",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/lifecycle.js",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/routing.js",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/@solidjs/router/dist/utils.js",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start-trpc/dist/index.js",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/api/index.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid-start-file-system-router",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/api/internalFetch.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/api/middleware.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/api/router.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/Form.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/FormError.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/createRouteAction.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/createRouteData.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/data/index.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/dev/CsrRoot.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/entry-server/StartServer.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "solid-start-csr-dev",
+        "vite:define",
+        "vite:import-glob",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/entry-server/index.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/entry-server/render.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/error-boundary/ErrorBoundary.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/error-boundary/index.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/index.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/clientOnly.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/index.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/islands/server-router.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Document.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/FileRoutes.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid-start-file-system-router",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/InlineStyles.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid-start-file-system-router",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Links.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Meta.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/Scripts.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/root/index.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/router.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/ServerContext.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/middleware.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/responses.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/server-functions/server.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/server/types.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookie.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookieSigning.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookieStorage.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/cookies.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/index.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/memoryStorage.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/session/sessions.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/node_modules/solid-start/types.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/entry-server.tsx",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "solid",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/env/schema.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/env/server.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/routes/api/trpc/[trpc].ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/server/db/client.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/server/trpc/context.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/server/trpc/router/_app.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/server/trpc/router/example.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/Users/tobis/gamesa-skola/src/server/trpc/utils.ts",
+      "deps": [],
+      "plugins": [
+        "__load__",
+        "vite:esbuild",
+        "vite:define",
+        "vite:import-analysis"
+      ],
+      "virtual": false
+    }
+  ]
+}
