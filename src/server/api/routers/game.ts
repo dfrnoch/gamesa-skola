@@ -1,5 +1,5 @@
 import { prisma } from "~/server/db";
-import { createTRPCRouter, protectedProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const gameRouter = createTRPCRouter({
   startGame: protectedProcedure.mutation(async ({ ctx }) => {
@@ -11,7 +11,11 @@ export const gameRouter = createTRPCRouter({
     });
   }),
 
-  getGame: protectedProcedure.query(async ({ ctx }) => {
+  getGame: publicProcedure.query(async ({ ctx }) => {
+    if (!ctx.session?.user) {
+      return null;
+    }
+
     return prisma.game.findFirst({
       where: {
         userId: ctx.session.user.id,
