@@ -1,8 +1,9 @@
-import React, { useState } from "react";
 import { QrReader } from "react-qr-reader";
 
 export default function CodeReader() {
-  const [data, setData] = useState("");
+  const checkResult = (result: string) => {
+    console.log(result);
+  };
 
   return (
     <div className="absolute top-0 left-0 w-screen h-screen">
@@ -10,9 +11,8 @@ export default function CodeReader() {
         <QrReader
           onResult={(result, error) => {
             if (result) {
-              setData(result.getText());
+              checkResult(result.getText());
             }
-
             if (!error) {
               console.info(error);
             }
