@@ -3,7 +3,11 @@ import React from "react";
 export default function Seventh() {
   return (
     <>
-      <div>7</div>
+      <main className="w-screen h-screen  bg-gray-700">
+        <div>
+          <h1>cau</h1>
+        </div>
+      </main>
     </>
   );
 }
