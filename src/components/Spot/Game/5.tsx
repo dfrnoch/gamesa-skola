@@ -1,5 +1,3 @@
-import React from "react";
-
-export default function Fifth() {
-  return <div>5</div>;
+export default function Sixth() {
+  return <div>6</div>;
 }
