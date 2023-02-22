@@ -12,13 +12,13 @@ export default function SelectAnswer({ data, handleSelect }: Props) {
         // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
         <div
           key={item.letter}
-          className="cursor-pointer flex justify-start items-center gap-20 "
+          className="cursor-pointer flex justify-start items-center gap-10 mt-8"
           onClick={() => {
             handleSelect(item.letter);
           }}
         >
-          <div>{item.letter}</div>
-          <div className="border-[2px]">{item.question}</div>
+          <div className="border-2 text-center px-5 py-2 rounded-xl bg-green-600">{item.letter}</div>
+          <div className="border-2 text-center px-5 py-2 rounded-xl bg-green-600">{item.question}</div>
         </div>
       ))}
     </div>
