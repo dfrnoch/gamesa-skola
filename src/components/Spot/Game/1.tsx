@@ -1,3 +1,3 @@
 export default function First() {
-  return <div>Prvni spot</div>;
+  return <div>Nejaky info, jak hrat atd.</div>;
 }
