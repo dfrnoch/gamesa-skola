@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
   return (
     <main className="flex h-screen w-screen flex-col items-center bg-gray-700">
-      {openGame && <SpotGame number={3} />}
+      {openGame && <SpotGame number={2} />}
       {openQr && <CodeReader />}
 
       <div className="border-[5px] border-warm-gray-50 w-screen h-screen">Prihlasen</div>
