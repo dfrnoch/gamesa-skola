@@ -1,13 +1,18 @@
 import React from "react";
+import { TouchBackend } from "react-dnd-touch-backend";
+import { DndProvider } from "react-dnd";
 
-export default function Seventh() {
+function Seventh() {
+  const ItemTypes = {
+    KNIGHT: "knight",
+  };
+
   return (
-    <>
-      <main>
-        <div>
-          <h1>cau</h1>
-        </div>
-      </main>
-    </>
+    <div className=" bg-gray-700 w-screen h-screen text-gray-200">
+      <h1>cau</h1>
+      <span>♘</span>
+    </div>
   );
 }
+
+export default Seventh;
