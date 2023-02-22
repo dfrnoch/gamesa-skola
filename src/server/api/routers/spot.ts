@@ -5,7 +5,6 @@ import { createTRPCRouter, protectedProcedure } from "../trpc";
 export const spotRouter = createTRPCRouter({
   validateSpot: protectedProcedure.input(z.string().min(1)).mutation(async ({ ctx, input }) => {
     const id: string | undefined = input.split("/").pop();
-
     if (!id) {
       return {
         error: "Spot not found",
@@ -27,6 +26,7 @@ export const spotRouter = createTRPCRouter({
     const game = await prisma.game.findFirst({
       where: {
         userId: ctx.session.user.id,
+        completedSpot: true,
       },
       include: {
         currentSpot: true,
@@ -51,6 +51,7 @@ export const spotRouter = createTRPCRouter({
       },
       data: {
         spotId: spot.id,
+        completedSpot: false,
       },
     });
 
