@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { prisma } from "~/server/db";
+import { completeSpot, findGame } from "~/utils/spotSettings";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const spotRouter = createTRPCRouter({
@@ -64,4 +65,9 @@ export const spotRouter = createTRPCRouter({
       if (input.first.toLowerCase() === "vitamín d" && input.first.toLowerCase() === "vitamínu d") {
       }
     }),
+
+  checkAnswer3: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
+    const game = await findGame(ctx.session.user.id);
+    await completeSpot(game?.id || "");
+  }),
 });

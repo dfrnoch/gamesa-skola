@@ -30,3 +30,14 @@ export const removeHeart = async (gameId: string) => {
 
   return true;
 };
+
+export const findGame = async (userId: string) => {
+  return prisma.game.findFirst({
+    where: {
+      userId,
+    },
+    include: {
+      currentSpot: true,
+    },
+  });
+};
