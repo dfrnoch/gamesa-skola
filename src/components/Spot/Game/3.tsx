@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent } from "react";
-import SelectAnswer from "~/components/SelectAnswer";
 
 export default function Third() {
   return (
@@ -8,7 +7,7 @@ export default function Third() {
         <h1 className=" text-4xl text-center">Co je hlavní součást antivirotik</h1>
       </div>
       <div className="px-20 mt-16 text-3xl">
-        <SelectAnswer data={["cdcd", "cdcdcd"]} />
+        <p>a</p>
       </div>
     </div>
   );
