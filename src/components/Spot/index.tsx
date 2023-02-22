@@ -6,7 +6,11 @@ interface LayoutProps {
 
 const gameComponents = [
   dynamic(() => import("./Game/1")),
+  dynamic(() => import("./Game/2")),
+  dynamic(() => import("./Game/3")),
   dynamic(() => import("./Game/4")),
+  dynamic(() => import("./Game/5")),
+  dynamic(() => import("./Game/6")),
   dynamic(() => import("./Game/7")),
 ];
 

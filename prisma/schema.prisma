@@ -55,6 +55,8 @@ model Game {
     startTime  DateTime @default(now())
     health     Int      @default(3)
 
+    completedSpot Boolean @default(false)
+
     inventory   Inventory?
     currentSpot Spot       @relation(fields: [spotId], references: [id])
     user        User       @relation(fields: [userId], references: [id])
