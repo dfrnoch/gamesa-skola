@@ -1,10 +1,15 @@
+import { useState } from "react";
 import { QrReader } from "react-qr-reader";
 import { api } from "~/utils/api";
 
 export default function CodeReader() {
   const validateSpot = api.spot.validateSpot.useMutation();
+  const [checking, setChecking] = useState(false);
 
   const checkResult = async (result: string) => {
+    if (checking) return;
+
+    setChecking(true);
     await validateSpot.mutateAsync(result);
     console.log(validateSpot.data);
     console.log(validateSpot.isSuccess);
@@ -21,6 +26,7 @@ export default function CodeReader() {
           onResult={async (result) => {
             if (result) {
               await checkResult(result.getText());
+              setChecking(false);
             }
           }}
           constraints={{

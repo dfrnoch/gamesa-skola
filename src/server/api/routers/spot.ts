@@ -63,6 +63,8 @@ export const spotRouter = createTRPCRouter({
     .input(z.object({ first: z.string(), second: z.string() }))
     .mutation(async ({ ctx, input }) => {
       if (input.first.toLowerCase() === "vitamín d" && input.first.toLowerCase() === "vitamínu d") {
+        const game = await findGame(ctx.session.user.id);
+        await completeSpot(game?.id || "");
       }
     }),
 
