@@ -41,26 +41,26 @@ export default function Third(): JSX.Element {
 
       <div className="mt-10">
         <p className="text-3xl text-center p-4">
-          Tady bude{" "}
+          {" "}
           <input
             type="text"
             onChange={handleChange}
             value={message.first}
             name="first"
-            className="text-gray-700 rounded mr-4 ml-4"
+            className="text-gray-700 rounded mr-4 ml-4 w-52"
           />{" "}
-          tady pokračuje.
+          je rozpustná látka, která je pro lidské tělo nezbytná pro správnou funkci kostí a svalů.
         </p>
         <p className="text-3xl text-center p-4">
-          Text{" "}
+          Existují dvě hlavní formy{" "}
           <input
             type="text"
             onChange={handleChange}
             value={message.second}
             name="second"
-            className="text-gray-700 rounded mr-4 ml-4"
+            className="text-gray-700 rounded mr-4 ml-4 w-52"
           />{" "}
-          je zde.
+          ergokalciferol a cholekalciferol.
         </p>
       </div>
       <div className="flex justify-center pt-16">
