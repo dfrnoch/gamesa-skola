@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
-export default function Third() {
+export default function Second() {
   const checkAnswer = api.spot.checkAnswer2.useMutation();
 
   const [questions, setQuestions] = useState([

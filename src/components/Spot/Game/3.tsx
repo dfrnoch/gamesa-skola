@@ -6,7 +6,7 @@ interface Message {
   second: string;
 }
 
-function Fourth(): JSX.Element {
+export default function Third(): JSX.Element {
   const checkData = api.spot.checkAnswer4.useMutation();
 
   const [message, setMessage] = useState<Message>({
@@ -71,5 +71,3 @@ function Fourth(): JSX.Element {
     </>
   );
 }
-
-export default Fourth;

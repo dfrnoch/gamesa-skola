@@ -1,3 +1,3 @@
-export default function Second() {
-  return <div>2</div>;
+export default function First() {
+  return <div>Prvni spot</div>;
 }

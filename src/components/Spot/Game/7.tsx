@@ -1,3 +1,3 @@
-export default function Fist() {
-  return <div>1</div>;
+export default function Seventh() {
+  return <div>7</div>;
 }
