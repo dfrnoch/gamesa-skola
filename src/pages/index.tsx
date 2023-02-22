@@ -21,11 +21,11 @@ const Home: NextPage = () => {
   }
 
   return (
-    <main className="flex h-screen w-screen flex-col items-center bg-gray-700">
-      {openGame && <SpotGame number={2} />}
+    <main className="flex h-screen w-screen flex-col items-center bg-gray-200">
+      {openGame && <SpotGame number={getGame.data.currentSpot.number} />}
       {openQr && <CodeReader />}
 
-      <div className="border-[5px] border-warm-gray-50 w-screen h-screen">Prihlasen</div>
+      <div className="border-warm-gray-50 w-screen h-screen">Prihlasen</div>
       <button onClick={() => setOpenGame(!openGame)}>Otevřít hru</button>
       <button onClick={() => setOpenQr(!openQr)}>Otevřít QR</button>
     </main>
