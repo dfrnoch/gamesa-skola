@@ -6,27 +6,21 @@ export default function CodeReader() {
 
   const checkResult = async (result: string) => {
     await validateSpot.mutateAsync(result);
+    console.log(validateSpot.data);
+    console.log(validateSpot.isSuccess);
 
-    if (validateSpot.isSuccess) {
-      console.log("success");
-      //todo: invalidate getGame trpc query
-    } else {
-      console.log("error");
+    if (validateSpot.data) {
+      window.location.replace("/");
     }
-
-    console.log(result);
   };
 
   return (
     <div className="absolute top-0 left-0 w-screen h-screen">
       <div className="">
         <QrReader
-          onResult={(result, error) => {
+          onResult={async (result) => {
             if (result) {
-              checkResult(result.getText());
-            }
-            if (!error) {
-              console.info(error);
+              await checkResult(result.getText());
             }
           }}
           constraints={{
