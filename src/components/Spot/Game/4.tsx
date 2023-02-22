@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
+import { api } from "~/utils/api";
 
 interface Message {
   first: string;
@@ -6,6 +7,7 @@ interface Message {
 }
 
 function Fourth(): JSX.Element {
+  const checkData = api.spot.checkAnswer4.useMutation();
   const [message, setMessage] = useState<Message>({
     first: "",
     second: "",
@@ -21,12 +23,8 @@ function Fourth(): JSX.Element {
   }
 
   //TODO: tohle budeme validovat na serveru a ne na FE
-  function handleClick(): void {
-    if (message.first === "ahoj" && message.second === "baf") {
-      setUpdate("ano");
-    } else {
-      setUpdate("ne");
-    }
+  async function handleClick() {
+    await checkData.mutateAsync(message);
   }
 
   return (

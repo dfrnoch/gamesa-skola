@@ -16,4 +16,12 @@ export const spotRouter = createTRPCRouter({
 
     return spot;
   }),
+
+
+  checkAnswer4: protectedProcedure.input(z.object({first: z.string(), second: z.string()})).mutation(async ({ ctx, input }) => {
+    if(input.first.toLowerCase() === "vytamín d" && input.first.toLowerCase() === "vytamínu d"){
+      
+    }
+  }
+  )
 });
