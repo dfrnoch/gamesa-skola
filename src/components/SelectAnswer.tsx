@@ -1,5 +1,9 @@
 interface Props {
-  data: string[];
+  data: {
+    letter: string;
+    question: string;
+  }[];
+  handleSelect: (letter: string) => void;
 }
 export default function SelectAnswer({ data }: Props) {
   return (

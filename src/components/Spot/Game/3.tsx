@@ -8,11 +8,11 @@ interface Message {
 
 function Fourth(): JSX.Element {
   const checkData = api.spot.checkAnswer4.useMutation();
+
   const [message, setMessage] = useState<Message>({
     first: "",
     second: "",
   });
-  const [update, setUpdate] = useState<string>("");
 
   function handleChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
