@@ -1,15 +1,17 @@
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { prisma } from "~/server/db";
-import { completeSpot, findGame } from "~/utils/spotSettings";
+import { completeSpot, removeHeart } from "~/utils/spotSettings";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const spotRouter = createTRPCRouter({
   validateSpot: protectedProcedure.input(z.string().min(1)).mutation(async ({ ctx, input }) => {
     const id: string | undefined = input.split("/").pop();
     if (!id) {
-      return {
-        error: "Spot not found",
-      };
+      throw new TRPCError({
+        code: "BAD_REQUEST",
+        message: "Invalid spot id",
+      });
     }
 
     const spot = await prisma.spot.findFirst({
@@ -18,9 +20,10 @@ export const spotRouter = createTRPCRouter({
       },
     });
     if (!spot) {
-      return {
-        error: "Spot not found",
-      };
+      throw new TRPCError({
+        code: "NOT_FOUND",
+        message: "Spot not found",
+      });
     }
 
     //check user game
@@ -35,15 +38,17 @@ export const spotRouter = createTRPCRouter({
     });
 
     if (!game) {
-      return {
-        error: "Game not found",
-      };
+      throw new TRPCError({
+        code: "NOT_FOUND",
+        message: "Game not found",
+      });
     }
 
     if (spot.number !== game.currentSpot.number + 1) {
-      return {
-        error: "Spot is not next",
-      };
+      throw new TRPCError({
+        code: "BAD_REQUEST",
+        message: "Invalid spot",
+      });
     }
 
     await prisma.game.update({
@@ -63,13 +68,41 @@ export const spotRouter = createTRPCRouter({
     .input(z.object({ first: z.string(), second: z.string() }))
     .mutation(async ({ ctx, input }) => {
       if (input.first.toLowerCase() === "vitamín d" && input.first.toLowerCase() === "vitamínu d") {
-        const game = await findGame(ctx.session.user.id);
-        await completeSpot(game?.id || "");
+        await completeSpot(ctx.session.user.id);
+        return {
+          correct: true,
+        };
       }
+      await removeHeart(ctx.session.user.id);
+      return {
+        correct: false,
+      };
     }),
 
   checkAnswer3: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
-    const game = await findGame(ctx.session.user.id);
-    await completeSpot(game?.id || "");
+    if (input.toLowerCase() === "vitamín d") {
+      await completeSpot(ctx.session.user.id);
+      return {
+        correct: true,
+      };
+    }
+    await removeHeart(ctx.session.user.id);
+    return {
+      correct: false,
+    };
+  }),
+
+  checkAnswer2: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
+    if (input === "D") {
+      await completeSpot(ctx.session.user.id);
+      return {
+        correct: true,
+      };
+    } else {
+      await removeHeart(ctx.session.user.id);
+      return {
+        correct: false,
+      };
+    }
   }),
 });

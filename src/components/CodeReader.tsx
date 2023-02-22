@@ -1,39 +1,32 @@
 import { useState } from "react";
-import { QrReader } from "react-qr-reader";
+import { QrScanner } from "@yudiel/react-qr-scanner";
 import { api } from "~/utils/api";
 
 export default function CodeReader() {
   const validateSpot = api.spot.validateSpot.useMutation();
-  const [checking, setChecking] = useState(false);
-
-  const checkResult = async (result: string) => {
-    if (checking) return;
-
-    setChecking(true);
-    await validateSpot.mutateAsync(result);
-    console.log(validateSpot.data);
-    console.log(validateSpot.isSuccess);
-
-    if (validateSpot.data) {
-      window.location.replace("/");
-    }
-  };
 
   return (
-    <div className="absolute top-0 left-0 w-screen h-screen">
-      <div className="">
-        <QrReader
-          onResult={async (result) => {
-            if (result) {
-              await checkResult(result.getText());
-              setChecking(false);
-            }
-          }}
-          constraints={{
-            facingMode: "environment",
-          }}
-        />
-      </div>
+    <div className="top-0 left-0 bottom-0 right-0 m-auto absolute backdrop-blur pt-20">
+      <div className="text-center text-2xl font-bold mb-5">Naskenujte QR kód</div>
+      <QrScanner
+        onResult={async (result) => {
+          const data = await validateSpot.mutateAsync(result.getText());
+
+          if (data) {
+            window.location.reload();
+          } else {
+            console.log(validateSpot.error);
+          }
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        constraints={{
+          facingMode: "environment",
+          aspectRatio: { min: 1, max: 1 },
+        }}
+        scanDelay={1000}
+      />
     </div>
   );
 }

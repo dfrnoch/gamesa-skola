@@ -57,4 +57,22 @@ export const gameRouter = createTRPCRouter({
 
     return game;
   }),
+
+  checkHealth: protectedProcedure.query(async ({ ctx }) => {
+    if (!ctx.session?.user) {
+      return null;
+    }
+
+    const game = await prisma.game.findFirst({
+      where: {
+        userId: ctx.session.user.id,
+      },
+    });
+
+    if (!game) {
+      return null;
+    }
+
+    return game;
+  }),
 });

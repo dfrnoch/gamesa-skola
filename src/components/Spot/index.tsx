@@ -21,6 +21,8 @@ export default function Layout({ number }: LayoutProps) {
 
   return (
     //tady bude jeste nejaky close button
-    <div className="z-10 absolute w-screen h-screen bg-white">{GameComponent && <GameComponent />}</div>
+    <div className="z-10 absolute w-screen h-screen bg-black text-gray-200">
+      {GameComponent && <GameComponent />}
+    </div>
   );
 }

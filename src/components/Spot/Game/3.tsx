@@ -24,11 +24,17 @@ function Fourth(): JSX.Element {
 
   //TODO: tohle budeme validovat na serveru a ne na FE
   async function handleClick() {
-    await checkData.mutateAsync(message);
+    const status = await checkData.mutateAsync(message);
+
+    if (status.correct) {
+      window.location.reload();
+    } else {
+      //TODO: zobrazit chybu
+    }
   }
 
   return (
-    <div className=" bg-gray-700 w-screen h-screen text-gray-200">
+    <>
       <div className="flex justify-center">
         <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4" />
       </div>
@@ -62,7 +68,7 @@ function Fourth(): JSX.Element {
           Button
         </button>
       </div>
-    </div>
+    </>
   );
 }
 

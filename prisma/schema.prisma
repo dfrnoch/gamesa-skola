@@ -51,9 +51,12 @@ model User {
 model Game {
     id String @id @default(cuid())
 
-    hasStarted Boolean  @default(false)
-    startTime  DateTime @default(now())
-    health     Int      @default(3)
+    hasStarted Boolean @default(false)
+
+    startTime DateTime  @default(now())
+    endTime   DateTime?
+
+    health Int @default(3)
 
     completedSpot Boolean @default(false)
 
@@ -63,6 +66,8 @@ model Game {
 
     userId String @unique
     spotId String
+
+    completed Boolean @default(false)
 }
 
 model VerificationToken {

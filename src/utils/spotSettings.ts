@@ -1,9 +1,9 @@
 import { prisma } from "~/server/db";
 
-export const completeSpot = async (gameId: string) => {
+export const completeSpot = async (userId: string) => {
   await prisma.game.update({
     where: {
-      id: gameId,
+      userId,
     },
     data: {
       completedSpot: true,
@@ -13,10 +13,10 @@ export const completeSpot = async (gameId: string) => {
   return true;
 };
 
-export const removeHeart = async (gameId: string) => {
+export const removeHeart = async (userId: string) => {
   const data = await prisma.game.update({
     where: {
-      id: gameId,
+      userId,
     },
     data: {
       health: {
@@ -29,15 +29,4 @@ export const removeHeart = async (gameId: string) => {
   }
 
   return true;
-};
-
-export const findGame = async (userId: string) => {
-  return prisma.game.findFirst({
-    where: {
-      userId,
-    },
-    include: {
-      currentSpot: true,
-    },
-  });
 };
