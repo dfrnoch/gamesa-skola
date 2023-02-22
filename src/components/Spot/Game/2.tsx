@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
@@ -27,7 +27,7 @@ export default function Second() {
   const handleSelect = async (letter: string) => {
     const status = await checkAnswer.mutateAsync(letter);
 
-    if (status) {
+    if (status.correct) {
       window.location.reload();
     } else {
       setQuestions(questions.filter((q) => q.letter !== letter));
