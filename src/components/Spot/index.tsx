@@ -14,6 +14,7 @@ export default function Layout({ number }: LayoutProps) {
   const GameComponent = gameComponents[number - 1];
 
   return (
+    //tady bude jeste nejaky close button
     <div className="z-10 absolute w-screen h-screen bg-white p-2">{GameComponent && <GameComponent />}</div>
   );
 }
