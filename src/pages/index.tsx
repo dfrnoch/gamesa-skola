@@ -1,7 +1,8 @@
 import { type NextPage } from "next";
 import Mapa from "~/components/Home/Mapa";
-import StartGame from "~/components/Home/StartGame";
 import SpotGame from "~/components/Spot";
+
+import dynamic from "next/dynamic";
 
 import { api } from "~/utils/api";
 
@@ -12,8 +13,14 @@ const Home: NextPage = () => {
     return <div>Načítání</div>;
   }
 
+  const StartGame = dynamic(() => import("~/components/Home/StartGame"), { ssr: false });
   if (!getGame.data) {
     return <StartGame />;
+  }
+
+  const Leaderboard = dynamic(() => import("~/components/Home/Leaderboard"), { ssr: false });
+  if (getGame.data.completed) {
+    return <Leaderboard />;
   }
 
   return (
