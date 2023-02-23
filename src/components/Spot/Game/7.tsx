@@ -6,19 +6,17 @@ export default function Seventh() {
   const [letters, setLetters] = useState(initialState);
   const [selected, setSelected] = useState<string[]>([]);
 
-  function handleClick(letter: string) {
-    setSelected([...selected, letter]);
-    setLetters(letters.filter((l) => l !== letter));
+  function handleClick(index: number) {
+    const letter = letters[index];
+    setLetters(letters.filter((_, i) => i !== index));
+    if (letter) {
+      setSelected([...selected, letter]);
+    }
   }
 
-  function handleBackspace() {
-    if (selected.length === 0) return;
-
-    const lastLetter = selected[selected.length - 1];
-    setSelected(selected.filter((l) => l !== lastLetter));
-    if (typeof lastLetter === "string") {
-      setLetters([...letters, lastLetter]);
-    }
+  function handleReset() {
+    setLetters(initialState);
+    setSelected([]);
   }
 
   return (
