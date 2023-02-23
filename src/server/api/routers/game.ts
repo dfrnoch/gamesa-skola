@@ -18,7 +18,7 @@ export const gameRouter = createTRPCRouter({
       return null;
     }
 
-    return prisma.game.findFirst({
+    const data = await prisma.game.findFirst({
       where: {
         userId: ctx.session.user.id,
       },
@@ -26,18 +26,35 @@ export const gameRouter = createTRPCRouter({
         currentSpot: true,
       },
     });
-  }),
 
-  checkQrCode: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
-    if (!ctx.session?.user) {
+    const points = [
+      { label: "První", x: 50, y: 50, active: false },
+      { label: "Druhý", x: 100, y: 50, active: false },
+      { label: "Třetí", x: 150, y: 50, active: false },
+      { label: "Čtvrtý", x: 200, y: 50, active: false },
+      { label: "Pátý", x: 250, y: 50, active: false },
+      { label: "Šestý", x: 300, y: 50, active: false },
+      { label: "Sedmý", x: 300, y: 70, active: false },
+      { label: "Osmý", x: 300, y: 90, active: false },
+      { label: "Devátý", x: 310, y: 20, active: false },
+    ];
+
+    if (!data) {
       return null;
     }
 
-    return prisma.spot.findFirst({
-      where: {
-        id: input,
-      },
+    const activePoints = points.slice(0, data.currentSpot.number - 1);
+    activePoints.push({
+      label: points[data.currentSpot.number - 1]?.label || "",
+      x: points[data.currentSpot.number - 1]?.x || 0,
+      y: points[data.currentSpot.number - 1]?.y || 0,
+      active: true,
     });
+
+    return {
+      ...data,
+      points: activePoints,
+    };
   }),
 
   checkGameSpot: protectedProcedure.input(z.string().min(1)).query(async ({ ctx, input }) => {
