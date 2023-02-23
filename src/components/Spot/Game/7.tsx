@@ -27,7 +27,7 @@ export default function Seventh() {
         {letters.map((letter, index) => (
           // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
           <div
-            className="border-2 py-1 px-2 border-dashed "
+            className="border-2 py-1 px-2 border-dashed cursor-pointer"
             onClick={() => handleClick(index)}
             key={index + letter}
           >
