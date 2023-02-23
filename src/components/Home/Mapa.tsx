@@ -1,12 +1,14 @@
 import React, { useRef, useEffect, FC } from "react";
 
-interface Point {
-  x: number;
-  y: number;
-  label: string;
+interface MapaProps {
+  points?: {
+    x: number;
+    y: number;
+    label: string;
+  }[];
 }
 
-const Mapa: FC = () => {
+const Mapa: FC<MapaProps> = ({ points }) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   // calculate the maximum scroll position based on the size of the map
@@ -48,16 +50,9 @@ const Mapa: FC = () => {
     startY = undefined;
   };
 
-  // custom points
-  const points: Point[] = [
-    { x: 100, y: 200, label: "Point A" },
-    { x: 300, y: 400, label: "Point B" },
-    { x: 700, y: 200, label: "Point C" },
-  ];
-
   return (
     <div
-      className="h-screen relative overflow-x-scroll overflow-y-hidden"
+      className="h-screen overflow-x-scroll overflow-y-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -68,13 +63,13 @@ const Mapa: FC = () => {
         alt="Map"
         className="block h-full w-auto max-w-none"
       />
-      {points.map((point) => (
+      {points?.map((point) => (
         <div
-          key={`${point.x}-${point.y}`}
-          className="absolute bg-red-500 text-white px-2 py-1 rounded-lg"
-          style={{ left: point.x, top: point.y }}
+          key={`${point.x},${point.y}`}
+          className="absolute bg-red-500 w-4 h-4 rounded-full"
+          style={{ top: `${point.y}%`, left: `${point.x}%` }}
         >
-          {point.label}
+          <span className="sr-only">{point.label}</span>
         </div>
       ))}
     </div>
