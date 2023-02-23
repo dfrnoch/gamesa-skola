@@ -2,14 +2,20 @@ import React, { useRef, useState } from "react";
 
 interface VideoProps {
   url: string;
+  posterUrl: string;
 }
 
-const Video: React.FC<VideoProps> = ({ url }) => {
+const Video: React.FC<VideoProps> = ({ url, posterUrl }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState<boolean>(false);
+  const [loaded, setLoaded] = useState<boolean>(false);
 
   const handlePlay = () => {
     setPlaying(true);
+    if (!loaded) {
+      videoRef.current?.load();
+      setLoaded(true);
+    }
     videoRef.current?.play();
   };
 
@@ -19,7 +25,9 @@ const Video: React.FC<VideoProps> = ({ url }) => {
 
   return (
     <div className="relative">
-      <video ref={videoRef} src={url} className="w-full h-full object-cover" onEnded={handleEnded} />
+      <video ref={videoRef} className="w-full h-full object-cover" poster={posterUrl} onEnded={handleEnded}>
+        <source src={url} />
+      </video>
       {!playing && (
         // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
         <div

@@ -14,7 +14,10 @@ const StartGame: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 bg-black h-screen w-screen">
-      <Video url="https://cdn.discordapp.com/attachments/824638985082634250/1078425387631116408/Expozice_video-2.mp4" />
+      <Video
+        url="https://cdn.discordapp.com/attachments/824638985082634250/1078425387631116408/Expozice_video-2.mp4"
+        posterUrl="https://media.discordapp.net/attachments/1033457027822923927/1078431275536371763/Screenshot_2023-02-23_at_22.40.13.jpg?width=1100&height=614"
+      />
       <button
         className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
