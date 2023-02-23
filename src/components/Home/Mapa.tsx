@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useRef, useEffect, FC, useState } from "react";
 import CodeReader from "../CodeReader";
 
@@ -25,8 +26,7 @@ const Mapa: FC<MapaProps> = ({ points }) => {
       // Scroll to the nearest active point
       if (imageRef.current) {
         imageRef.current.scroll({
-          left:
-            (nearestActivePointX.x * imageRef.current.offsetWidth) / 100 - imageRef.current.offsetWidth / 2,
+          left: nearestActivePointX.x - imageRef.current.clientWidth / 2,
           behavior: "smooth",
         });
       }
@@ -37,10 +37,12 @@ const Mapa: FC<MapaProps> = ({ points }) => {
     <>
       {openReader && <CodeReader onClose={() => setOpenReader(false)} />}
       <div className="h-screen overflow-x-scroll overflow-y-hidden relative" ref={imageRef}>
-        <img
+        <Image
           src="https://media.discordapp.net/attachments/1077141029637066844/1078247421022318622/Kreslici_platno_1.png"
           alt="Map"
           className="block h-full w-auto max-w-none"
+          width={1920}
+          height={1080}
         />
         {points?.map((point) => (
           // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
@@ -50,7 +52,10 @@ const Mapa: FC<MapaProps> = ({ points }) => {
             className={`absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 ${
               point.active ? "text-white" : "text-gray-500"
             }`}
-            style={{ top: `${point.y}%`, left: `${point.x}%` }}
+            style={{
+              top: `${point.y}px`,
+              left: `${point.x}px`,
+            }}
           >
             <svg
               className="w-6 h-6"
