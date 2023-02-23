@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T"];
+const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T", "MEZERA"];
 
 export default function Seventh() {
   const [letters, setLetters] = useState(initialState);
@@ -10,7 +10,11 @@ export default function Seventh() {
     const letter = letters[index];
     setLetters(letters.filter((_, i) => i !== index));
     if (letter) {
-      setSelected([...selected, letter]);
+      if (letter === "MEZERA") {
+        setSelected([...selected, " "]);
+      } else {
+        setSelected([...selected, letter]);
+      }
     }
   }
 
@@ -21,18 +25,29 @@ export default function Seventh() {
 
   return (
     <div className="flex justify-center flex-col items-center">
-      <button onClick={handleReset}>Reset</button>
-      <p className="pl-4 h-10 w-44 rounded-lg bg-lime-600 align-middle border-2">{selected.join("")}</p>
-      <div className="flex flex-row flex-wrap gap-10 items-center justify-center">
+      <div className="border-2 rounded-xl border-lime-800 p-1 border-dashed mt-5 ">
+        <div className="pl-4 h-10 w-72 rounded-lg bg-lime-300 align-text-bottom font-bold text-black text-2xl">
+          {selected.join("")}
+        </div>
+      </div>
+      <div className="mt-3 mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
+        <button
+          onClick={handleReset}
+          className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
+        >
+          Reset
+        </button>
+      </div>
+      <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
         {letters.map((letter, index) => (
           // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
           <div
-            className="border-2 py-1 px-2 border-dashed cursor-pointer"
+            className="border-2 p-1 rounded-xl border-dashed cursor-pointer mx-1 border-lime-300"
             onClick={() => handleClick(index)}
             key={index + letter}
           >
-            <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
-              <div className="text-center px-5 py-2 rounded-lg bg-red-800">{letter}</div>
+            <div className="flex flex-row flex-wrap gap-5 items-center justify-center font-semibold">
+              <div className="text-center px-5 py-2 rounded-lg bg-lime-800">{letter}</div>
             </div>
           </div>
         ))}
