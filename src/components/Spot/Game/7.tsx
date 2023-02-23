@@ -20,33 +20,23 @@ export default function Seventh() {
   }
 
   return (
-    <>
-      <div className="flex justify-center">
-        <div>
-          <div className="flex justify-center items-center gap-10 mt-4 font-semibold">
-            <div className="border-2 py-1 px-2 border-dashed ">
-              <p className="pl-4 h-10 w-44 rounded-lg bg-lime-600 align-middle border-2">
-                {selected.join("")}
-              </p>
+    <div className="flex justify-center flex-col items-center">
+      <button onClick={handleReset}>Reset</button>
+      <p className="pl-4 h-10 w-44 rounded-lg bg-lime-600 align-middle border-2">{selected.join("")}</p>
+      <div className="flex flex-row flex-wrap gap-10 items-center justify-center">
+        {letters.map((letter, index) => (
+          // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+          <div
+            className="border-2 py-1 px-2 border-dashed "
+            onClick={() => handleClick(index)}
+            key={index + letter}
+          >
+            <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
+              <div className="text-center px-5 py-2 rounded-lg bg-red-800">{letter}</div>
             </div>
-            <button onClick={handleBackspace}>Backspace</button>
           </div>
-          <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
-            {letters.map((letter) => (
-              // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-              <div
-                key={letter}
-                className="flex justify-center items-center gap-10 mt-4 font-semibold"
-                onClick={() => handleClick(letter)}
-              >
-                <div className="border-2 border-dashed p-1 rounded-xl border-lime-600">
-                  <div className="text-center px-5 py-2 rounded-lg bg-lime-900">{letter}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }
