@@ -3,14 +3,10 @@ interface Props {
     letter: string;
     question: string;
   }[];
-  color: Color;
+  color: "red" | "blue" | "green" | "yellow";
   handleSelect: (letter: string) => void;
 }
 
-enum Color {
-  RED,
-  BLUE,
-}
 export default function SelectAnswer({ data, handleSelect, color }: Props) {
   return (
     <div>
@@ -26,9 +22,11 @@ export default function SelectAnswer({ data, handleSelect, color }: Props) {
           <div
             className={`text-center px-5 py-2 rounded-xl 
               
-              ${color ? Color.RED : " bg-red-800" ? Color.BLUE : " bg-blue-700"}
-              
-              `}
+              ${color === "red" && "bg-red-500"}
+              ${color === "blue" && "bg-blue-500"}
+              ${color === "green" && "bg-green-500"}
+              ${color === "yellow" && "bg-yellow-500"}
+            `}
           >
             {item.letter}
           </div>
