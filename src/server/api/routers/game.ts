@@ -43,11 +43,11 @@ export const gameRouter = createTRPCRouter({
       return null;
     }
 
-    const activePoints = points.slice(0, data.currentSpot.number - 1);
+    const activePoints = points.slice(0, data.currentSpot.number);
     activePoints.push({
-      label: points[data.currentSpot.number - 1]?.label || "",
-      x: points[data.currentSpot.number - 1]?.x || 0,
-      y: points[data.currentSpot.number - 1]?.y || 0,
+      label: points[data.currentSpot.number]?.label || "",
+      x: points[data.currentSpot.number]?.x || 0,
+      y: points[data.currentSpot.number]?.y || 0,
       active: true,
     });
 
