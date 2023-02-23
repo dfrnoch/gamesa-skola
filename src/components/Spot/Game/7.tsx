@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T", "MEZERA"];
+const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T", "Mezera"];
 
 export default function Seventh() {
   const [letters, setLetters] = useState(initialState);
   const [selected, setSelected] = useState<string[]>([]);
 
+  function handleSubmition() {}
+
   function handleClick(index: number) {
     const letter = letters[index];
     setLetters(letters.filter((_, i) => i !== index));
     if (letter) {
-      if (letter === "MEZERA") {
+      if (letter === "Mezera") {
         setSelected([...selected, " "]);
       } else {
         setSelected([...selected, letter]);
@@ -38,6 +40,15 @@ export default function Seventh() {
           Reset
         </button>
       </div>
+      <div className=" mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
+        <button
+          onClick={() => handleSubmition}
+          className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
+        >
+          Potvrdit
+        </button>
+      </div>
+
       <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
         {letters.map((letter, index) => (
           // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
