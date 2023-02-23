@@ -1,27 +1,24 @@
 import { useState } from "react";
 
+const initialState = ["a", "b", "c", "d", "e", "f", "g"];
+
 export default function Seventh() {
-  const [letters, setLetters] = useState([
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-  ]);
+  const [letters, setLetters] = useState(initialState);
   const [selected, setSelected] = useState<string[]>([]);
 
   function handleClick(letter: string) {
     setSelected([...selected, letter]);
     setLetters(letters.filter((l) => l !== letter));
+  }
+
+  function handleBackspace() {
+    if (selected.length === 0) return;
+
+    const lastLetter = selected[selected.length - 1];
+    setSelected(selected.filter((l) => l !== lastLetter));
+    if (typeof lastLetter === "string") {
+      setLetters([...letters, lastLetter]);
+    }
   }
 
   return (
@@ -45,6 +42,7 @@ export default function Seventh() {
           <div className="border-2 border-dashed p-">
             <div className="text-center px-5 py-2 rounded-lg bg-red-800">{selected.join("")}</div>
           </div>
+          <button onClick={handleBackspace}>Backspace</button>
         </div>
       </div>
     </>
