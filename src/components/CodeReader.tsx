@@ -1,12 +1,15 @@
 import { QrScanner } from "@yudiel/react-qr-scanner";
 import { api } from "~/utils/api";
 
-export default function CodeReader() {
+interface Props {
+  onClose: () => void;
+}
+export default function CodeReader({ onClose }: Props) {
   const validateSpot = api.spot.validateSpot.useMutation();
 
   return (
-    <div className="top-0 left-0 bottom-0 right-0 m-auto absolute backdrop-blur pt-20">
-      <div className="text-center text-2xl font-bold mb-5">Naskenujte QR kód</div>
+    <div className="top-0 left-0 bottom-0 right-0 m-auto absolute backdrop-blur pt-20 z-50">
+      <div className="text-center text-2xl font-bold mb-5 p-3 bg-white rounded">Naskenujte QR kód</div>
       <QrScanner
         onResult={async (result) => {
           const data = await validateSpot.mutateAsync(result.getText());

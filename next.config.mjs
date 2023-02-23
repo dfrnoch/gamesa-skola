@@ -9,5 +9,8 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    domains: ["media.discordapp.net"],
+  },
 };
 export default config;

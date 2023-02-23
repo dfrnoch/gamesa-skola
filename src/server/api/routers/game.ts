@@ -33,21 +33,21 @@ export const gameRouter = createTRPCRouter({
       { label: "Třetí", x: 150, y: 50, active: false },
       { label: "Čtvrtý", x: 200, y: 50, active: false },
       { label: "Pátý", x: 250, y: 50, active: false },
-      { label: "Šestý", x: 300, y: 50, active: false },
-      { label: "Sedmý", x: 300, y: 70, active: false },
-      { label: "Osmý", x: 300, y: 90, active: false },
-      { label: "Devátý", x: 310, y: 20, active: false },
+      { label: "Šestý", x: 500, y: 50, active: false },
+      { label: "Sedmý", x: 500, y: 70, active: false },
+      { label: "Osmý", x: 800, y: 90, active: false },
+      { label: "Devátý", x: 910, y: 20, active: false },
     ];
 
     if (!data) {
       return null;
     }
 
-    const activePoints = points.slice(0, data.currentSpot.number - 1);
+    const activePoints = points.slice(0, data.currentSpot.number);
     activePoints.push({
-      label: points[data.currentSpot.number - 1]?.label || "",
-      x: points[data.currentSpot.number - 1]?.x || 0,
-      y: points[data.currentSpot.number - 1]?.y || 0,
+      label: points[data.currentSpot.number]?.label || "",
+      x: points[data.currentSpot.number]?.x || 0,
+      y: points[data.currentSpot.number]?.y || 0,
       active: true,
     });
 
