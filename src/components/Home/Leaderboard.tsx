@@ -10,7 +10,7 @@ export default function Leaderboard() {
         {gameData.data?.map((item) => (
           <div className="flex flex-row gap-3">
             <div className="flex flex-col">
-              <div className="text-2xl">{item.user.name}</div>
+              <div className="text-2xl">name</div>
             </div>
             <div className="flex flex-col">
               <div className="text-xl">timos</div>
