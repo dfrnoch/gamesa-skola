@@ -35,15 +35,15 @@ export default function Third() {
     }
   };
 
-  return (
-    <>
-      <div className="mt-5 flex justify-center font-bold">
-        <img
-          src="C:\Users\tobis\gamesa-skola\src\assets\backgrounds\3bg.jpg"
-          alt=""
-          className="absolute bg-cover"
-        />
+  const backgroundImage =
+    "https://cdn.discordapp.com/attachments/824638985082634250/1078424824541626408/3bg.jpg";
 
+  return (
+    <div
+      className="w-screen h-screen bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="mt-5 flex justify-center font-bold">
         <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
           <h1 className=" text-4xl text-center bg-red-500 rounded-lg p-3">
             Co je hlavní součást antivirotik?
@@ -55,8 +55,12 @@ export default function Third() {
         <SelectAnswer answers={questions} onSelect={handleSelect} color={"red"} />
       </div>
       <div className="flex justify-center">
-        <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4 mt-5 rounded-xl" />
+        <img
+          src="https://cdn.discordapp.com/attachments/824638985082634250/1078419123316477994/icon3.png"
+          alt="logo"
+          className="w-40 h-40 mt-2 mb-1"
+        />
       </div>
-    </>
+    </div>
   );
 }
