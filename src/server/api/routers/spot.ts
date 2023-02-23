@@ -79,8 +79,11 @@ export const spotRouter = createTRPCRouter({
       };
     }),
 
-  checkAnswer2: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
-
+  checkAnswer2: protectedProcedure.mutation(async ({ ctx }) => {
+    await completeSpot(ctx.session.user.id);
+    return {
+      correct: true,
+    };
   }),
 
   checkAnswer3: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
