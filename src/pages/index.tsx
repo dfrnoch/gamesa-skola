@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     },
 
     {
-      x: 130,
+      x: 200,
       y: 10,
       label: "test",
       active: true,

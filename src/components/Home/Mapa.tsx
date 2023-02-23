@@ -12,79 +12,27 @@ interface MapaProps {
 }
 
 const Mapa: FC<MapaProps> = ({ points }) => {
-  const mapRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
-  // calculate the maximum scroll position based on the size of the map
-  const [maxScroll, setMaxScroll] = React.useState(0);
   useEffect(() => {
-    if (mapRef.current) {
-      const map = mapRef.current;
-      const maxWidth = map.scrollWidth - map.clientWidth;
-      setMaxScroll(maxWidth);
-    }
-  }, [mapRef]);
+    const activePoints = points?.filter((point) => point.active);
 
-  // handle swipe events
-  let startX: number | undefined;
-  let startY: number | undefined;
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    startX = event.touches[0]?.pageX;
-    startY = event.touches[0]?.pageY;
-  };
-  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (startX && startY) {
-      const deltaX = startX - event.touches[0]?.pageX!!;
-      const deltaY = startY - event.touches[0]?.pageY!!;
-      if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (mapRef.current) {
-          const map = mapRef.current;
-          const scrollLeft = map.scrollLeft + deltaX;
-          const clampedScrollLeft = Math.min(Math.max(scrollLeft, 0), maxScroll);
-          map.scrollTo(clampedScrollLeft, 0);
-          event.preventDefault();
-        }
-      }
-      startX = undefined;
-      startY = undefined;
-    }
-  };
-  const handleTouchEnd = () => {
-    startX = undefined;
-    startY = undefined;
-  };
+    if (activePoints && activePoints.length > 0) {
+      const nearestActivePointX = activePoints.reduce((prev, curr) => (prev.x < curr.x ? prev : curr));
 
-  // scroll to the active point if it's not visible in the viewport
-  useEffect(() => {
-    if (mapRef.current) {
-      const map = mapRef.current;
-      const activePoint = points?.find((point) => point.active);
-      if (activePoint) {
-        const pointX = (activePoint.x / 100) * map.scrollWidth;
-        const pointY = (activePoint.y / 100) * map.scrollHeight;
-        const rect = map.getBoundingClientRect();
-        if (pointX < map.scrollLeft || pointX > map.scrollLeft + rect.width) {
-          const clampedScrollLeft = Math.min(Math.max(pointX - rect.width / 2, 0), maxScroll);
-          map.scrollTo(clampedScrollLeft, 0);
-        }
-        if (pointY < map.scrollTop || pointY > map.scrollTop + rect.height) {
-          const clampedScrollTop = Math.min(
-            Math.max(pointY - rect.height / 2, 0),
-            map.scrollHeight - rect.height,
-          );
-          map.scrollTo(map.scrollLeft, clampedScrollTop);
-        }
+      // Scroll to the nearest active point
+      if (imageRef.current) {
+        imageRef.current.scroll({
+          left:
+            (nearestActivePointX.x * imageRef.current.offsetWidth) / 100 - imageRef.current.offsetWidth / 2,
+          behavior: "smooth",
+        });
       }
     }
-  }, [mapRef, points, maxScroll]);
+  }, [points]);
 
   return (
-    <div
-      className="h-screen overflow-x-scroll overflow-y-hidden"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      ref={mapRef}
-    >
+    <div className="h-screen overflow-x-scroll overflow-y-hidden relative" ref={imageRef}>
       <img
         src="https://media.discordapp.net/attachments/1077141029637066844/1078247421022318622/Kreslici_platno_1.png"
         alt="Map"
@@ -92,11 +40,27 @@ const Mapa: FC<MapaProps> = ({ points }) => {
       />
       {points?.map((point) => (
         <div
-          key={`${point.x},${point.y}`}
-          className={`absolute bg-${point.active ? "blue" : "red"}-500 w-4 h-4 rounded-full`}
+          key={point.label + point.x + point.y}
+          className={`absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 ${
+            point.active ? "text-white" : "text-gray-500"
+          }`}
           style={{ top: `${point.y}%`, left: `${point.x}%` }}
         >
-          <span className="sr-only">{point.label}</span>
+          <svg
+            className="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            />
+          </svg>
+          <div className="text-xs">{point.label}</div>
         </div>
       ))}
     </div>
