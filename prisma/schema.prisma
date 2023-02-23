@@ -53,8 +53,8 @@ model Game {
 
     hasStarted Boolean @default(false)
 
-    startTime DateTime  @default(now())
-    endTime   DateTime?
+    startTime DateTime @default(now())
+    gameTime  Int?
 
     health Int @default(3)
 

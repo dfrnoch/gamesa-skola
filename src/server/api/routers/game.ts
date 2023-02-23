@@ -13,6 +13,22 @@ export const gameRouter = createTRPCRouter({
     });
   }),
 
+  getLeaderboard: publicProcedure.query(async () => {
+    const data = await prisma.game.findMany({
+      where: {
+        completed: true,
+      },
+      include: {
+        user: true,
+      },
+      orderBy: {
+        gameTime: "asc",
+      },
+    });
+
+    return data;
+  }),
+
   getGame: publicProcedure.query(async ({ ctx }) => {
     if (!ctx.session?.user) {
       return null;
