@@ -37,9 +37,11 @@ export default function Third() {
   return (
     <>
       <div className="mt-5 flex justify-center font-bold">
-        <h1 className=" text-4xl text-center bg-red-500 mx-7 rounded-xl p-3">
-          Co je hlavní součást antivirotik
-        </h1>
+        <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
+          <h1 className=" text-4xl text-center bg-red-500 rounded-lg p-3">
+            Co je hlavní součást antivirotik?
+          </h1>
+        </div>
       </div>
 
       <div className="mt-2 text-2xl flex justify-center">
