@@ -59,7 +59,7 @@ const Mapa: FC<MapaProps> = ({ points }) => {
       ref={mapRef}
     >
       <img
-        src="https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3132&q=80"
+        src="https://media.discordapp.net/attachments/1077141029637066844/1078247421022318622/Kreslici_platno_1.png"
         alt="Map"
         className="block h-full w-auto max-w-none"
       />
