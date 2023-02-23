@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       {!getGame.data.completedSpot && <SpotGame number={3} />}
       {openQr && <CodeReader />}
 
-      <div className="flex flex-col w-screen h-screen">
+      <div className="flex flex-col w-screen h-screen justify-between">
         <Mapa />
         <button onClick={() => setOpenQr(!openQr)} className="bg-red-300 w-full p-6">
           Otevřít QR
