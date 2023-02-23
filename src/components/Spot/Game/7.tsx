@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { number } from "zod";
-import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
 const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T", "Mezera"];

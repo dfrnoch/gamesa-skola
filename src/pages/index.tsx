@@ -1,6 +1,4 @@
 import { type NextPage } from "next";
-import { useState } from "react";
-import CodeReader from "~/components/CodeReader";
 import Mapa from "~/components/Home/Mapa";
 import StartGame from "~/components/Home/StartGame";
 import SpotGame from "~/components/Spot";

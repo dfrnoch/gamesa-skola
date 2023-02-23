@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
