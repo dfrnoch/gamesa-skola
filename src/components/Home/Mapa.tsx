@@ -1,6 +1,12 @@
 import React, { useRef, useEffect, FC } from "react";
 
-const Map: FC = () => {
+interface Point {
+  x: number;
+  y: number;
+  label: string;
+}
+
+const Mapa: FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   // calculate the maximum scroll position based on the size of the map
@@ -17,13 +23,13 @@ const Map: FC = () => {
   let startX: number | undefined;
   let startY: number | undefined;
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    startX = event.touches[0].pageX;
-    startY = event.touches[0].pageY;
+    startX = event.touches[0]?.pageX;
+    startY = event.touches[0]?.pageY;
   };
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (startX && startY) {
-      const deltaX = startX - event.touches[0].pageX;
-      const deltaY = startY - event.touches[0].pageY;
+      const deltaX = startX - event.touches[0]?.pageX!!;
+      const deltaY = startY - event.touches[0]?.pageY!!;
       if (Math.abs(deltaX) > Math.abs(deltaY)) {
         if (mapRef.current) {
           const map = mapRef.current;
@@ -42,9 +48,16 @@ const Map: FC = () => {
     startY = undefined;
   };
 
+  // custom points
+  const points: Point[] = [
+    { x: 100, y: 200, label: "Point A" },
+    { x: 300, y: 400, label: "Point B" },
+    { x: 700, y: 200, label: "Point C" },
+  ];
+
   return (
     <div
-      className="h-screen overflow-x-scroll overflow-y-hidden"
+      className="h-screen relative overflow-x-scroll overflow-y-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -55,8 +68,17 @@ const Map: FC = () => {
         alt="Map"
         className="block h-full w-auto max-w-none"
       />
+      {points.map((point) => (
+        <div
+          key={`${point.x}-${point.y}`}
+          className="absolute bg-red-500 text-white px-2 py-1 rounded-lg"
+          style={{ left: point.x, top: point.y }}
+        >
+          {point.label}
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Map;
+export default Mapa;
