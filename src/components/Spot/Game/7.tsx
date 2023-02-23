@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const initialState = ["R", "Ch", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T"];
+const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T"];
 
 export default function Seventh() {
   const [letters, setLetters] = useState(initialState);
