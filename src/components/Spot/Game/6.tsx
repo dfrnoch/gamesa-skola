@@ -39,7 +39,7 @@ export default function Third() {
       </div>
 
       <div className="mt-2 text-2xl flex justify-center mx-8">
-        <SelectAnswer data={questions} handleSelect={handleSelect} color={"blue"} />
+        <SelectAnswer answers={questions} onSelect={handleSelect} color={"blue"} />
       </div>
       <div className="flex justify-center">
         <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4 mt-5 rounded-xl" />
