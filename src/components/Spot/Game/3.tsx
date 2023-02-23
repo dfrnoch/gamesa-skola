@@ -37,8 +37,13 @@ export default function Third() {
 
   return (
     <>
-      <Image src={"/assets/backgrounds/3bg.jpg"} alt={""} width={1080} height={1920} />
       <div className="mt-5 flex justify-center font-bold">
+        <img
+          src="C:\Users\tobis\gamesa-skola\src\assets\backgrounds\3bg.jpg"
+          alt=""
+          className="absolute bg-cover"
+        />
+
         <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
           <h1 className=" text-4xl text-center bg-red-500 rounded-lg p-3">
             Co je hlavní součást antivirotik?
