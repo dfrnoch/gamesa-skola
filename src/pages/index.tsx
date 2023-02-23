@@ -8,8 +8,6 @@ import SpotGame from "~/components/Spot";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  const [openQr, setOpenQr] = useState(false);
-
   const getGame = api.game.getGame.useQuery();
 
   if (getGame.isLoading) {
@@ -19,17 +17,28 @@ const Home: NextPage = () => {
   if (!getGame.data) {
     return <StartGame />;
   }
+  const points = [
+    {
+      x: 10,
+      y: 10,
+      label: "test",
+      active: false,
+    },
+
+    {
+      x: 130,
+      y: 10,
+      label: "test",
+      active: true,
+    },
+  ];
 
   return (
     <main className="h-screen w-screen flex-col bg-gray-200">
-      {openQr && <CodeReader />}
       {!getGame.data.completedSpot && <SpotGame number={7} />}
 
       <div className="flex flex-col w-screen h-screen justify-between">
-        <Mapa />
-        <button onClick={() => setOpenQr(!openQr)} className="bg-red-300 w-full p-6">
-          Otevřít QR
-        </button>
+        <Mapa points={points} />
       </div>
     </main>
   );

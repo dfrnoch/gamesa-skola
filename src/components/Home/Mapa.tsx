@@ -1,11 +1,14 @@
 import React, { useRef, useEffect, FC } from "react";
 
+interface Point {
+  x: number;
+  y: number;
+  label: string;
+  active?: boolean;
+}
+
 interface MapaProps {
-  points?: {
-    x: number;
-    y: number;
-    label: string;
-  }[];
+  points?: Point[];
 }
 
 const Mapa: FC<MapaProps> = ({ points }) => {
@@ -50,6 +53,30 @@ const Mapa: FC<MapaProps> = ({ points }) => {
     startY = undefined;
   };
 
+  // scroll to the active point if it's not visible in the viewport
+  useEffect(() => {
+    if (mapRef.current) {
+      const map = mapRef.current;
+      const activePoint = points?.find((point) => point.active);
+      if (activePoint) {
+        const pointX = (activePoint.x / 100) * map.scrollWidth;
+        const pointY = (activePoint.y / 100) * map.scrollHeight;
+        const rect = map.getBoundingClientRect();
+        if (pointX < map.scrollLeft || pointX > map.scrollLeft + rect.width) {
+          const clampedScrollLeft = Math.min(Math.max(pointX - rect.width / 2, 0), maxScroll);
+          map.scrollTo(clampedScrollLeft, 0);
+        }
+        if (pointY < map.scrollTop || pointY > map.scrollTop + rect.height) {
+          const clampedScrollTop = Math.min(
+            Math.max(pointY - rect.height / 2, 0),
+            map.scrollHeight - rect.height,
+          );
+          map.scrollTo(map.scrollLeft, clampedScrollTop);
+        }
+      }
+    }
+  }, [mapRef, points, maxScroll]);
+
   return (
     <div
       className="h-screen overflow-x-scroll overflow-y-hidden"
@@ -66,7 +93,7 @@ const Mapa: FC<MapaProps> = ({ points }) => {
       {points?.map((point) => (
         <div
           key={`${point.x},${point.y}`}
-          className="absolute bg-red-500 w-4 h-4 rounded-full"
+          className={`absolute bg-${point.active ? "blue" : "red"}-500 w-4 h-4 rounded-full`}
           style={{ top: `${point.y}%`, left: `${point.x}%` }}
         >
           <span className="sr-only">{point.label}</span>

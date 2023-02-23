@@ -11,5 +11,7 @@ export default function QrCode() {
 
   if (!res.data) return window.location.replace("/");
 
+  if (res.data.number) return window.location.replace("/");
+
   return <div>{res.data?.name}</div>;
 }
