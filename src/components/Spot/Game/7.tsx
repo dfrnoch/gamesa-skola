@@ -1,3 +1,14 @@
+import React from "react";
+import { TouchBackend } from "react-dnd-touch-backend";
+import { DndProvider } from "react-dnd";
+
 export default function Seventh() {
-  return <div>7</div>;
+  return (
+    <div className=" bg-gray-700 w-screen h-screen text-gray-200">
+      <DndProvider backend={TouchBackend}>
+        <span>♘</span>
+      </DndProvider>
+      <h1>cau</h1>
+    </div>
+  );
 }

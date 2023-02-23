@@ -1,78 +1,50 @@
-import React, { useState, ChangeEvent } from "react";
+import { useState } from "react";
+import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
-interface Message {
-  first: string;
-  second: string;
-}
+export default function Third() {
+  const checkAnswer = api.spot.checkAnswer2.useMutation();
 
-export default function Third(): JSX.Element {
-  const checkData = api.spot.checkAnswer4.useMutation();
+  const [questions, setQuestions] = useState([
+    {
+      question: "monohydráty",
+      letter: "A",
+    },
+    {
+      question: "serotonin",
+      letter: "B",
+    },
+    {
+      question: "ritonavir",
+      letter: "C",
+    },
+    {
+      question: "paracetamol",
+      letter: "D",
+    },
+  ]);
 
-  const [message, setMessage] = useState<Message>({
-    first: "",
-    second: "",
-  });
-
-  function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-    const { name, value } = event.target;
-    setMessage({
-      ...message,
-      [name]: value,
-    });
-  }
-
-  //TODO: tohle budeme validovat na serveru a ne na FE
-  async function handleClick() {
-    const status = await checkData.mutateAsync(message);
+  const handleSelect = async (letter: string) => {
+    const status = await checkAnswer.mutateAsync(letter);
 
     if (status.correct) {
       window.location.reload();
     } else {
-      //TODO: zobrazit chybu
+      setQuestions(questions.filter((q) => q.letter !== letter));
     }
-  }
+  };
 
   return (
     <>
-      <div className="flex justify-center mt-2">
-        <div className="text-center text-3xl mt-3 bg-red-700 py-2 w-80 rounded-xl font-bold my-4 ">
-          Doplň slovo
-        </div>
+      <div className="mt-5 flex justify-center font-bold">
+        <h1 className=" text-4xl text-center bg-red-500 mx-7 rounded-xl p-3">
+          Co je hlavní součást antivirotik
+        </h1>
       </div>
 
-      <div className="flex justify-center text-black font-semibold">
-        <div className="m-3 rounded-xl bg-red-400 w-80">
-          <p className="text-2xl text-center pt-4">
-            {" "}
-            <input
-              type="text"
-              onChange={handleChange}
-              value={message.first}
-              name="first"
-              className="text-gray-700 rounded mr-4 ml-4 w-32"
-            />{" "}
-            je rozpustná látka, která je pro lidské tělo nezbytná pro správnou funkci kostí a svalů.
-          </p>
-          <p className="text-2xl text-center pb-4 px-4 pt-2">
-            Existují dvě hlavní formy{" "}
-            <input
-              type="text"
-              onChange={handleChange}
-              value={message.second}
-              name="second"
-              className="text-gray-700 rounded mr-4 ml-4 w-32"
-            />{" "}
-            ergokalciferol a cholekalciferol.
-          </p>
-        </div>
+      <div className="mt-2 text-2xl flex justify-center">
+        <SelectAnswer data={questions} handleSelect={handleSelect} color={0} />
       </div>
-      <div className="flex justify-center pt-4">
-        <button onClick={handleClick} className="w-80 h-12 text-3xl bg-red-700 rounded-xl font-bold">
-          Button
-        </button>
-      </div>
-
       <div className="flex justify-center">
         <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4 mt-5 rounded-xl" />
       </div>

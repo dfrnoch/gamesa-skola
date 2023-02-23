@@ -1,16 +1,5 @@
-import React from "react";
-import { TouchBackend } from "react-dnd-touch-backend";
-import { DndProvider } from "react-dnd";
-
 function Sixth() {
-  return (
-    <div className=" bg-gray-700 w-screen h-screen text-gray-200">
-      <DndProvider backend={TouchBackend}>
-        <span>♘</span>
-      </DndProvider>
-      <h1>cau</h1>
-    </div>
-  );
+  return <div>6</div>;
 }
 
 export default Sixth;
