@@ -23,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <main className="h-screen w-screen flex-col bg-gray-200">
       {openQr && <CodeReader />}
-      {!getGame.data.completedSpot && <SpotGame number={2} />}
+      {!getGame.data.completedSpot && <SpotGame number={7} />}
 
       <div className="flex flex-col w-screen h-screen justify-between">
         <Mapa />
