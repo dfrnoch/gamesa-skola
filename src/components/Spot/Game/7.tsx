@@ -26,8 +26,10 @@ export default function Seventh() {
       <div className="flex justify-center">
         <div>
           <div className="flex justify-center items-center gap-10 mt-4 font-semibold">
-            <div className="border-2 px-20 py-5 border-dashed rounded-lg bg-lime-600">
-              <div className="">{selected.join("")}</div>
+            <div className="border-2 py-1 px-2 border-dashed ">
+              <p className="pl-4 h-10 w-44 rounded-lg bg-lime-600 align-middle border-2">
+                {selected.join("")}
+              </p>
             </div>
             <button onClick={handleBackspace}>Backspace</button>
           </div>
