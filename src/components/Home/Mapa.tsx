@@ -1,6 +1,14 @@
 import React, { useRef, useEffect, FC } from "react";
 
-const Map: FC = () => {
+interface MapaProps {
+  points?: {
+    x: number;
+    y: number;
+    label: string;
+  }[];
+}
+
+const Mapa: FC<MapaProps> = ({ points }) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   // calculate the maximum scroll position based on the size of the map
@@ -17,13 +25,13 @@ const Map: FC = () => {
   let startX: number | undefined;
   let startY: number | undefined;
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    startX = event.touches[0].pageX;
-    startY = event.touches[0].pageY;
+    startX = event.touches[0]?.pageX;
+    startY = event.touches[0]?.pageY;
   };
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (startX && startY) {
-      const deltaX = startX - event.touches[0].pageX;
-      const deltaY = startY - event.touches[0].pageY;
+      const deltaX = startX - event.touches[0]?.pageX!!;
+      const deltaY = startY - event.touches[0]?.pageY!!;
       if (Math.abs(deltaX) > Math.abs(deltaY)) {
         if (mapRef.current) {
           const map = mapRef.current;
@@ -55,8 +63,17 @@ const Map: FC = () => {
         alt="Map"
         className="block h-full w-auto max-w-none"
       />
+      {points?.map((point) => (
+        <div
+          key={`${point.x},${point.y}`}
+          className="absolute bg-red-500 w-4 h-4 rounded-full"
+          style={{ top: `${point.y}%`, left: `${point.x}%` }}
+        >
+          <span className="sr-only">{point.label}</span>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Map;
+export default Mapa;
