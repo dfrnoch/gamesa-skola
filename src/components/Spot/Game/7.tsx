@@ -1,12 +1,25 @@
 import { useState } from "react";
+import { number } from "zod";
+import SelectAnswer from "~/components/SelectAnswer";
+import { api } from "~/utils/api";
 
 const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T", "Mezera"];
 
 export default function Seventh() {
+  const checkAnswer = api.spot.checkAnswer7.useMutation();
+
   const [letters, setLetters] = useState(initialState);
   const [selected, setSelected] = useState<string[]>([]);
 
-  function handleSubmition() {}
+  async function handleSubmition() {
+    const status = await checkAnswer.mutateAsync(selected.join(""));
+
+    if (status.correct) {
+      window.location.reload();
+    } else {
+      handleReset();
+    }
+  }
 
   function handleClick(index: number) {
     const letter = letters[index];

@@ -133,4 +133,18 @@ export const spotRouter = createTRPCRouter({
       };
     }
   }),
+
+  checkAnswer7: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
+    if (input.toLowerCase() === "hrachový protein") {
+      await completeSpot(ctx.session.user.id);
+      return {
+        correct: true,
+      };
+    } else {
+      await removeHeart(ctx.session.user.id);
+      return {
+        correct: false,
+      };
+    }
+  }),
 });
