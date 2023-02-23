@@ -1,4 +1,13 @@
+import { api } from "~/utils/api";
+
 export default function First() {
+  const query = api.spot.checkAnswer1.useMutation();
+
+  const handleClick = async () => {
+    const data = await query.mutateAsync();
+    window.location.reload();
+  };
+
   return (
     <div>
       <div className="mt-5 flex flex-col justify-center items-center font-bold">
@@ -8,7 +17,10 @@ export default function First() {
         <p className="text-2xl">dadawwad</p>
       </div>
       <div className="flex justify-center">
-        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mt-5">
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mt-5"
+          onClick={handleClick}
+        >
           Rozumím
         </button>
       </div>
