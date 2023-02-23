@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const initialState = ["R", "Ch", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T"];
+const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T"];
 
 export default function Seventh() {
   const [letters, setLetters] = useState(initialState);
@@ -27,7 +27,7 @@ export default function Seventh() {
         {letters.map((letter, index) => (
           // rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
           <div
-            className="border-2 py-1 px-2 border-dashed "
+            className="border-2 py-1 px-2 border-dashed cursor-pointer"
             onClick={() => handleClick(index)}
             key={index + letter}
           >
