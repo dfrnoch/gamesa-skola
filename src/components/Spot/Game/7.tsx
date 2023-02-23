@@ -55,7 +55,7 @@ export default function Seventh() {
       </div>
       <div className=" mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
         <button
-          onClick={() => handleSubmition}
+          onClick={handleSubmition}
           className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
         >
           Potvrdit
