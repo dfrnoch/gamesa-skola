@@ -79,20 +79,11 @@ export const spotRouter = createTRPCRouter({
       };
     }),
 
-  checkAnswer3: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
-    if (input.toLowerCase() === "vitamín d") {
-      await completeSpot(ctx.session.user.id);
-      return {
-        correct: true,
-      };
-    }
-    await removeHeart(ctx.session.user.id);
-    return {
-      correct: false,
-    };
+  checkAnswer2: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
+
   }),
 
-  checkAnswer2: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
+  checkAnswer3: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
     if (input === "D") {
       await completeSpot(ctx.session.user.id);
       return {

@@ -4,7 +4,7 @@ import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
 export default function Third() {
-  const checkAnswer = api.spot.checkAnswer2.useMutation();
+  const checkAnswer = api.spot.checkAnswer3.useMutation();
 
   const [questions, setQuestions] = useState([
     {
