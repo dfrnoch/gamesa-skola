@@ -34,8 +34,14 @@ export default function Third() {
     }
   };
 
+  const backgroundImage =
+    "https://cdn.discordapp.com/attachments/824638985082634250/1078436320948539452/9bg.jpg";
+
   return (
-    <>
+    <div
+      className="w-screen h-screen bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="mt-5 flex justify-center font-bold text-black">
         <div className="border-2 border-dashed border-yellow-500 p-1 rounded-xl mx-7">
           <div className=" text-4xl text-center bg-yellow-300 rounded-lg p-3">Kolik měsíců má 28 dní?</div>
@@ -46,8 +52,12 @@ export default function Third() {
         <SelectAnswer answers={questions} onSelect={handleSelect} color={"yellow"} />
       </div>
       <div className="flex justify-center">
-        <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4 mt-5 rounded-xl" />
+        <img
+          src="https://cdn.discordapp.com/attachments/824638985082634250/1078419067729350716/light_bulb.png"
+          alt="logo"
+          className="w-40 h-46 mt-4"
+        />
       </div>
-    </>
+    </div>
   );
 }

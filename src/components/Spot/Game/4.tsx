@@ -33,9 +33,15 @@ export default function Fourth(): JSX.Element {
     }
   }
 
+  const backgroundImage =
+    "https://cdn.discordapp.com/attachments/824638985082634250/1078427195447464036/4bg.jpg";
+
   return (
-    <>
-      <div className="flex justify-center mt-2">
+    <div
+      className="w-screen h-screen bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="flex justify-center">
         <div className="border-2 border-dashed border-red-400 p-1 rounded-xl my-3">
           <div className="text-center text-3xl bg-red-800 py-2 w-80 rounded-lg font-bold ">Doplň slovo</div>
         </div>
@@ -78,8 +84,12 @@ export default function Fourth(): JSX.Element {
       </div>
 
       <div className="flex justify-center">
-        <img src="" alt="logo" className="pl-4 w-40 h-40 border-gray-200 border-4 mt-3 rounded-xl" />
+        <img
+          src="https://cdn.discordapp.com/attachments/824638985082634250/1078419068211695719/vitaminD.png"
+          alt="logo"
+          className="w-40 h-40 mt-3"
+        />
       </div>
-    </>
+    </div>
   );
 }
