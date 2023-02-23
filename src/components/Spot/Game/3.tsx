@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
@@ -54,10 +55,12 @@ export default function Third() {
         <SelectAnswer answers={questions} onSelect={handleSelect} color={"red"} />
       </div>
       <div className="flex justify-center">
-        <img
+        <Image
           src="https://cdn.discordapp.com/attachments/824638985082634250/1078419123316477994/icon3.png"
           alt="logo"
           className="w-40 h-40 mt-2 mb-1"
+          width={200}
+          height={200}
         />
       </div>
     </div>
