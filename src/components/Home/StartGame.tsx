@@ -28,8 +28,7 @@ const StartGame: React.FC = () => {
         />
         <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
           <h1 className=" text-2xl text-center bg-red-500 rounded-lg p-3">
-            Jsi nakažen zombie nákazou. Musíš posbírat všechny ingredience a vyrobit si lék než bude pozdě
-            (máš x času na dokončení hry).
+            Jsi nakažen zombie nákazou. Musíš posbírat všechny ingredience a vyrobit si lék než bude pozdě.
           </h1>
         </div>
         <div className="mt-3 flex justify-center font-bold text-2xl border-2 border-dashed border-red-500 rounded-xl p-1 mx-7">
