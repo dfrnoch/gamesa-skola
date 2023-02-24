@@ -82,7 +82,7 @@ export default function Fourth(): JSX.Element {
       <div className=" mt-1">
         <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-5 flex justify-center">
           <button onClick={handleClick} className="w-80 h-12 text-3xl bg-red-700 rounded-xl font-bold">
-            Button
+            Potvrdit
           </button>
         </div>
       </div>
