@@ -3,6 +3,7 @@ import { getServerSession, type NextAuthOptions, type DefaultSession } from "nex
 import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
+import InstagramProvider from "next-auth/providers/instagram";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
@@ -56,6 +57,10 @@ export const authOptions: NextAuthOptions = {
     FacebookProvider({
       clientId: env.FACEBOOK_CLIENT_ID,
       clientSecret: env.FACEBOOK_CLIENT_SECRET,
+    }),
+    InstagramProvider({
+      clientId: env.INSTAGRAM_CLIENT_ID,
+      clientSecret: env.INSTAGRAM_CLIENT_SECRET,
     }),
     /**
      * ...add more providers here.
