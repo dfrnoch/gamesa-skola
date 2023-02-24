@@ -45,26 +45,33 @@ export default function Seventh() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="flex justify-center flex-col items-center">
-        <div className="border-2 rounded-xl border-lime-800 p-1 border-dashed mt-5 ">
+        <div className=" border-lime-800 p-1 border-2 rounded-xl border-dashed my-2 mx-5">
+          <div className="bg-lime-300 text-2xl text-black font-bold text-center rounded-lg">
+            Poskládej název proteinu (2 slova).
+          </div>
+        </div>
+        <div className="border-2 rounded-xl border-lime-800 p-1 border-dashed mt-1 ">
           <div className="pl-4 h-10 w-72 rounded-lg bg-lime-300 align-text-bottom font-bold text-black text-2xl">
             {selected.join("")}
           </div>
         </div>
-        <div className="mt-3 mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
-          <button
-            onClick={handleReset}
-            className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
-          >
-            Reset
-          </button>
-        </div>
-        <div className=" mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
-          <button
-            onClick={handleSubmition}
-            className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
-          >
-            Potvrdit
-          </button>
+        <div className="flex justify-between gap-3">
+          <div className="mt-3 mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
+            <button
+              onClick={handleReset}
+              className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
+            >
+              Reset
+            </button>
+          </div>
+          <div className=" mt-3 mb-5 border-2 p-1 border-lime-600 border-dashed rounded-xl">
+            <button
+              onClick={handleSubmition}
+              className="text-2xl font-bold rounded-lg bg-lime-300 text-black px-2 py-1"
+            >
+              Potvrdit
+            </button>
+          </div>
         </div>
 
         <div className="flex flex-row flex-wrap gap-5 items-center justify-center">

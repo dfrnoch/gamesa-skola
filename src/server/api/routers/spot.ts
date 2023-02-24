@@ -67,7 +67,7 @@ export const spotRouter = createTRPCRouter({
   checkAnswer4: protectedProcedure
     .input(z.object({ first: z.string(), second: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      if (input.first.toLowerCase() === "vitamín d" && input.first.toLowerCase() === "vitamínu d") {
+      if ((input.first.toLowerCase() === "vitamín d" || input.first.toLowerCase() === "vitamin d") && (input.second.toLowerCase() === "vitamínu d" || input.second.toLowerCase() === "vitaminu d")) {
         await completeSpot(ctx.session.user.id);
         return {
           correct: true,
