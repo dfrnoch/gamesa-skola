@@ -1,7 +1,7 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { prisma } from "~/server/db";
-import { completeSpot, removeHeart } from "~/utils/spotSettings";
+import { completeSpot, removeHeart, winGame } from "~/utils/spotSettings";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const spotRouter = createTRPCRouter({
@@ -67,7 +67,10 @@ export const spotRouter = createTRPCRouter({
   checkAnswer4: protectedProcedure
     .input(z.object({ first: z.string(), second: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      if ((input.first.toLowerCase() === "vitamín d" || input.first.toLowerCase() === "vitamin d") && (input.second.toLowerCase() === "vitamínu d" || input.second.toLowerCase() === "vitaminu d")) {
+      if (
+        (input.first.toLowerCase() === "vitamín d" || input.first.toLowerCase() === "vitamin d") &&
+        (input.second.toLowerCase() === "vitamínu d" || input.second.toLowerCase() === "vitaminu d")
+      ) {
         await completeSpot(ctx.session.user.id);
         return {
           correct: true,
@@ -121,7 +124,6 @@ export const spotRouter = createTRPCRouter({
     }
   }),
 
-
   checkAnswer5: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
     if (input.toLowerCase() === "spanelsko" || input.toLowerCase() === "španělsko") {
       await completeSpot(ctx.session.user.id);
@@ -167,6 +169,8 @@ export const spotRouter = createTRPCRouter({
   checkAnswer9: protectedProcedure.input(z.string()).mutation(async ({ ctx, input }) => {
     if (input === "A") {
       await completeSpot(ctx.session.user.id);
+      await winGame(ctx.session.user.id);
+
       return {
         correct: true,
       };
@@ -177,6 +181,4 @@ export const spotRouter = createTRPCRouter({
       };
     }
   }),
-
-  
 });

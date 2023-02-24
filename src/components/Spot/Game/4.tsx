@@ -26,7 +26,7 @@ export default function Fourth(): JSX.Element {
   async function handleClick() {
     const status = await checkData.mutateAsync(message);
 
-    if (status.correct) {
+    if (status.correct === true) {
       toast.success("Správně");
       setTimeout(() => {
         window.location.reload();
