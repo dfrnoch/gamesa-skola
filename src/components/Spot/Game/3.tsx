@@ -43,7 +43,8 @@ export default function Third() {
       className="w-screen h-screen bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="mt-5 flex justify-center font-bold">
+      <div className="pt-3" />
+      <div className="flex justify-center font-bold">
         <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
           <h1 className=" text-4xl text-center bg-red-500 rounded-lg p-3">
             Co je hlavní součást antivirotik?
