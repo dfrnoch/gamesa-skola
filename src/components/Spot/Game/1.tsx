@@ -27,8 +27,15 @@ export default function First() {
         <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
           <h1 className=" text-2xl text-center bg-red-500 rounded-lg p-3">Jak hrát?</h1>
         </div>
-
-        <div className="flex justify-center mt-3">test</div>
+        <div className="flex flex-col justify-center items-center font-bold mt-3">
+          <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
+            <div className="flex justify-center rounded-lg p-2 bg-red-500">
+              Zde se Vám otevře mapa továrny, na které uvidíte zaznačené místa stanovišť. Když místo kliknete
+              otevře se vám čtečka qr codů přes kterou naskenujete daný qe code. Stanoviště se budou postupem
+              hry odemykat a otevírat Vám nové výzvy.
+            </div>
+          </div>
+        </div>
       </div>
       <div className="flex justify-center mt-3">
         <div className="border-2 border-red-800 rounded-xl p-1 border-dashed">

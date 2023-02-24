@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   return (
     <main className="h-screen w-screen flex-col bg-gray-200">
       <Toaster />
-      {!getGame.data.completedSpot && <SpotGame number={10} />}
+      {!getGame.data.completedSpot && <SpotGame number={1} />}
 
       <div className="flex flex-col w-screen h-screen justify-between">
         <Mapa points={getGame.data.points} />
