@@ -5,6 +5,7 @@ import SpotGame from "~/components/Spot";
 import dynamic from "next/dynamic";
 
 import { api } from "~/utils/api";
+import { Toaster } from "react-hot-toast";
 
 const Home: NextPage = () => {
   const getGame = api.game.getGame.useQuery();
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <main className="h-screen w-screen flex-col bg-gray-200">
+      <Toaster />
       {!getGame.data.completedSpot && <SpotGame number={getGame.data.currentSpot.number} />}
 
       <div className="flex flex-col w-screen h-screen justify-between">

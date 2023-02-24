@@ -41,17 +41,9 @@ export default function CodeReader({ onClose }: Props) {
             toast.error("Špatný kód");
             console.log("joe");
           }
-          if (validateSpot.isError) {
-            toast.error("Špatný kód");
-
-            console.log("joe");
-          }
         }}
         onError={(error) => {
           console.log(error);
-
-          toast.error("Špatný kód");
-          console.log("joe");
         }}
         constraints={{
           facingMode: "environment",
