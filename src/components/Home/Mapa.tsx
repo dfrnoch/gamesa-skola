@@ -40,8 +40,8 @@ const Mapa: FC<MapaProps> = ({ points }) => {
         <Image
           src="https://media.discordapp.net/attachments/1077141029637066844/1078247421022318622/Kreslici_platno_1.png"
           alt="Map"
-          className="block h-full w-auto max-w-none"
-          width={1920}
+          className="block h-full w-[2200px] max-w-none"
+          width={2200}
           height={1080}
         />
         {points?.map((point) => (
@@ -53,7 +53,7 @@ const Mapa: FC<MapaProps> = ({ points }) => {
               point.active ? "text-white" : "text-gray-500"
             }`}
             style={{
-              top: `${point.y}px`,
+              top: `${point.y}%`,
               left: `${point.x}px`,
             }}
           >
@@ -71,7 +71,7 @@ const Mapa: FC<MapaProps> = ({ points }) => {
                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"
               />
             </svg>
-            <div className="text-xs">{point.label}</div>
+            <div className="text-xs text-center">{point.label}</div>
           </div>
         ))}
       </div>
