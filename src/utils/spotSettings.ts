@@ -30,3 +30,32 @@ export const removeHeart = async (userId: string) => {
 
   return true;
 };
+
+export const winGame = async (userId: string) => {
+  const data = await prisma.game.findFirst({
+    where: {
+      userId,
+    },
+    select: {
+      startTime: true,
+    },
+  });
+
+  if (!data) {
+    return false;
+  }
+
+  const time = Math.floor((new Date().getTime() - data.startTime.getTime()) / 1000);
+
+  await prisma.game.update({
+    where: {
+      userId,
+    },
+    data: {
+      completed: true,
+      gameTime: time,
+    },
+  });
+
+  return true;
+};
