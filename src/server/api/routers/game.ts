@@ -44,10 +44,10 @@ export const gameRouter = createTRPCRouter({
     });
 
     const points = [
-      { label: "Dveře", x: 320, y: 50, active: false },
+      { label: "Výtah", x: 1030, y: 78, active: false },
       { label: "Sloup", x: 830, y: 38, active: false },
       { label: "Dveře", x: 980, y: 41, active: false },
-      { label: "Výtah", x: 1030, y: 78, active: false },
+      { label: "Dveře", x: 320, y: 50, active: false },
       { label: "Střed", x: 1200, y: 41, active: false },
       { label: "Třetí dveře", x: 1310, y: 42, active: false },
       { label: "Zeď", x: 1510, y: 41, active: false },

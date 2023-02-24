@@ -32,17 +32,26 @@ export default function CodeReader({ onClose }: Props) {
           try {
             const data = await validateSpot.mutateAsync(result.getText());
 
-            if (data) {
+            if (data.number) {
               window.location.reload();
             } else {
               toast.error("Špatný kód");
             }
           } catch (error) {
             toast.error("Špatný kód");
+            console.log("joe");
+          }
+          if (validateSpot.isError) {
+            toast.error("Špatný kód");
+
+            console.log("joe");
           }
         }}
         onError={(error) => {
           console.log(error);
+
+          toast.error("Špatný kód");
+          console.log("joe");
         }}
         constraints={{
           facingMode: "environment",
