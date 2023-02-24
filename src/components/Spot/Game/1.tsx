@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 import { api } from "~/utils/api";
 
 export default function First() {
@@ -5,7 +6,12 @@ export default function First() {
 
   const handleClick = async () => {
     const data = await query.mutateAsync();
-    window.location.reload();
+    if (data) {
+      toast.success("Úspěšně jsi dokončil první úkol!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
   };
 
   const backgroundImage =
