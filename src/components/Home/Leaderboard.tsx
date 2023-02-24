@@ -12,7 +12,9 @@ export default function Leaderboard() {
 
   return (
     <main className="w-screen h-screen bg-black text-white flex justify-start items-center flex-col ">
-      <h1 className="text-4xl mt-3">Zebricek</h1>
+      <div className="border-2 border-dashed border-red-800 p-1 rounded-xl mx-7">
+        <h1 className=" text-2xl text-center bg-red-500 rounded-lg p-1">Žebříček</h1>
+      </div>
       <table className="table-auto mt-5">
         {gameData.data?.map((game) => (
           <tr>
