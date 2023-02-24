@@ -29,11 +29,15 @@ export default function CodeReader({ onClose }: Props) {
       <div className="text-center text-2xl font-bold mb-5 p-3 bg-white rounded">Naskenujte QR kód</div>
       <QrScanner
         onResult={async (result) => {
-          const data = await validateSpot.mutateAsync(result.getText());
+          try {
+            const data = await validateSpot.mutateAsync(result.getText());
 
-          if (data) {
-            window.location.reload();
-          } else {
+            if (data) {
+              window.location.reload();
+            } else {
+              toast.error("Špatný kód");
+            }
+          } catch (error) {
             toast.error("Špatný kód");
           }
         }}
