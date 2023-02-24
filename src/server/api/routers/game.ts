@@ -52,7 +52,7 @@ export const gameRouter = createTRPCRouter({
       { label: "Třetí dveře", x: 1310, y: 42, active: false },
       { label: "Zeď", x: 1510, y: 41, active: false },
       { label: "Formy", x: 1620, y: 42, active: false },
-      { label: "Toalety", x: 1940, y: 24, active: false },
+      { label: "Umyvadla", x: 1940, y: 24, active: false },
     ];
 
     if (!data) {
