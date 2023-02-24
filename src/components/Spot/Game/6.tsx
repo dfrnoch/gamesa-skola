@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
@@ -24,8 +25,12 @@ export default function Third() {
     const status = await checkAnswer.mutateAsync(letter);
 
     if (status.correct) {
-      window.location.reload();
+      toast.success("Správně!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } else {
+      toast.error("Špatně!");
       setQuestions(questions.filter((q) => q.letter !== letter));
     }
   };

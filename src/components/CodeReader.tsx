@@ -1,5 +1,6 @@
 import { QrScanner } from "@yudiel/react-qr-scanner";
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { api } from "~/utils/api";
 
 interface Props {
@@ -33,7 +34,7 @@ export default function CodeReader({ onClose }: Props) {
           if (data) {
             window.location.reload();
           } else {
-            console.log(validateSpot.error);
+            toast.error("Špatný kód");
           }
         }}
         onError={(error) => {

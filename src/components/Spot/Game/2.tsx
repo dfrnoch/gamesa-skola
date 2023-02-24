@@ -3,6 +3,7 @@ import "react-jigsaw-puzzle/lib/jigsaw-puzzle.css";
 import { api } from "~/utils/api";
 import Video from "src/components/Video";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function Second() {
   const checkData = api.spot.checkAnswer2.useMutation();
@@ -11,7 +12,12 @@ export default function Second() {
   const checkAnswer = async () => {
     const data = await checkData.mutateAsync();
     if (data) {
-      window.location.reload();
+      toast.success("Správně");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      toast.error("Špatná odpověď");
     }
   };
 

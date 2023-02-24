@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { api } from "~/utils/api";
 
 const initialState = ["R", "CH", "I", "Ý", "H", "O", "V", "A", "R", "P", "E", "N", "O", "T", "Mezera"];
@@ -13,8 +14,12 @@ export default function Seventh() {
     const status = await checkAnswer.mutateAsync(selected.join(""));
 
     if (status.correct) {
-      window.location.reload();
+      toast.success("Správně!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } else {
+      toast.error("Špatně!");
       handleReset();
     }
   }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SetStateAction, useState } from "react";
+import { toast } from "react-hot-toast";
 import { api } from "~/utils/api";
 
 const backgroundImage =
@@ -18,8 +19,12 @@ export default function Eight() {
     const status = await checkAnswer.mutateAsync(message);
 
     if (status.correct) {
-      window.location.reload();
+      toast.success("Správně!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } else {
+      toast.error("Špatně!");
       setCheck(true);
     }
   };

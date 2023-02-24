@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
+import toast from "react-hot-toast";
 import { api } from "~/utils/api";
 
 interface Message {
@@ -22,14 +23,16 @@ export default function Fourth(): JSX.Element {
     });
   }
 
-  //TODO: tohle budeme validovat na serveru a ne na FE
   async function handleClick() {
     const status = await checkData.mutateAsync(message);
 
     if (status.correct) {
-      window.location.reload();
+      toast.success("Správně");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } else {
-      //TODO: zobrazit chybu
+      toast.error("Špatně");
     }
   }
 
