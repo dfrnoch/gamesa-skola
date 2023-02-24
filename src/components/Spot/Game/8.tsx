@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { SetStateAction, useState } from "react";
-import SelectAnswer from "~/components/SelectAnswer";
 import { api } from "~/utils/api";
 
 const backgroundImage =
