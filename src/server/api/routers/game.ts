@@ -108,4 +108,32 @@ export const gameRouter = createTRPCRouter({
 
     return game;
   }),
+
+  playAgain: protectedProcedure.mutation(async ({ ctx }) => {
+    const game = await prisma.game.findFirst({
+      where: {
+        userId: ctx.session.user.id,
+      },
+    });
+
+    if (!game) {
+      return null;
+    }
+
+    await prisma.user.update({
+      where: {
+        id: ctx.session.user.id,
+      },
+      data: {
+        game: {
+          create: {
+            hasStarted: true,
+            spotId: "cleeroxbn0000tu6p8dmeo8jo", //Prvni spot
+          },
+        },
+      },
+    });
+
+    return true;
+  }),
 });
