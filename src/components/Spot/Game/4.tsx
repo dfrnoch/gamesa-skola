@@ -59,8 +59,8 @@ export default function Fourth(): JSX.Element {
                 name="first"
                 className="text-gray-700 rounded mr-4 ml-4 w-32"
               />{" "}
-              (dvě slova) je rozpustná látka, která je pro lidské tělo nezbytná pro správnou funkci kostí a
-              svalů.
+              (slovo a písmeno) je rozpustná látka, která je pro lidské tělo nezbytná pro správnou funkci
+              kostí a svalů.
             </p>
             <p className="text-2xl text-center pb-4 px-4 pt-2">
               Existují dvě hlavní formy{" "}
@@ -71,7 +71,7 @@ export default function Fourth(): JSX.Element {
                 name="second"
                 className="text-gray-700 rounded mr-4 ml-4 w-32"
               />{" "}
-              (dvě slova) ergokalciferol a cholekalciferol.
+              (slovo a písmeno) ergokalciferol a cholekalciferol.
             </p>
           </div>
         </div>
