@@ -34,13 +34,15 @@ export default function First() {
           <div className="text-center  bg-red-500 rounded-lg p-2">Mnoho štěstí na tvé cestě.</div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mt-5"
-          onClick={handleClick}
-        >
-          Rozumím
-        </button>
+      <div className="flex justify-center mt-3">
+        <div className="border-2 border-red-800 rounded-xl p-1 border-dashed">
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg"
+            onClick={handleClick}
+          >
+            Rozumím
+          </button>
+        </div>
       </div>
     </div>
   );
