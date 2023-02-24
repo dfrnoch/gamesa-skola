@@ -44,15 +44,16 @@ export const gameRouter = createTRPCRouter({
     });
 
     const points = [
-      { label: "První", x: 50, y: 50, active: false },
-      { label: "Druhý", x: 100, y: 50, active: false },
-      { label: "Třetí", x: 150, y: 50, active: false },
-      { label: "Čtvrtý", x: 200, y: 50, active: false },
-      { label: "Pátý", x: 250, y: 50, active: false },
-      { label: "Šestý", x: 500, y: 50, active: false },
-      { label: "Sedmý", x: 500, y: 70, active: false },
-      { label: "Osmý", x: 800, y: 90, active: false },
-      { label: "Devátý", x: 910, y: 20, active: false },
+      { label: "Dveře", x: 320, y: 50, active: false },
+      { label: "Sloup", x: 830, y: 38, active: false },
+      { label: "Dveře", x: 980, y: 41, active: false },
+      { label: "Výtah", x: 1030, y: 78, active: false },
+      { label: "Střed", x: 1200, y: 41, active: false },
+      { label: "Třetí dveře", x: 1310, y: 42, active: false },
+      { label: "Zeď", x: 1510, y: 41, active: false },
+      { label: "Formy", x: 1620, y: 42, active: false },
+      { label: "Roh", x: 1730, y: 39, active: false },
+      { label: "Toalety", x: 1940, y: 24, active: false },
     ];
 
     if (!data) {
@@ -126,9 +127,12 @@ export const gameRouter = createTRPCRouter({
       },
       data: {
         game: {
-          create: {
-            hasStarted: true,
-            spotId: "cleeroxbn0000tu6p8dmeo8jo", //Prvni spot
+          update: {
+            hasStarted: false,
+            completed: false,
+            spotId: "cleeroxbn0000tu6p8dmeo8jo",
+            health: 5,
+            completedSpot: false,
           },
         },
       },
