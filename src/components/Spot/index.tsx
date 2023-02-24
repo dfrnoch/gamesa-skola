@@ -14,6 +14,7 @@ const gameComponents = [
   dynamic(() => import("./Game/7")),
   dynamic(() => import("./Game/8")),
   dynamic(() => import("./Game/9")),
+  dynamic(() => import("./Game/10")),
 ];
 
 export default function Layout({ number }: LayoutProps) {
