@@ -25,6 +25,9 @@ const server = z.object({
 
   FACEBOOK_CLIENT_ID: z.string(),
   FACEBOOK_CLIENT_SECRET: z.string(),
+
+  INSTAGRAM_CLIENT_ID: z.string(),
+  INSTAGRAM_CLIENT_SECRET: z.string(),
 });
 
 /**
@@ -53,6 +56,9 @@ const processEnv = {
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
   FACEBOOK_CLIENT_ID: process.env.FACEBOOK_CLIENT_ID,
   FACEBOOK_CLIENT_SECRET: process.env.FACEBOOK_CLIENT_SECRET,
+
+  INSTAGRAM_CLIENT_ID: process.env.INSTAGRAM_CLIENT_ID,
+  INSTAGRAM_CLIENT_SECRET: process.env.INSTAGRAM_CLIENT_SECRET,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 
